@@ -39,7 +39,7 @@ function Footer() {
         <TitledList title="Shop by Products" list={products} />
       </Box>
 
-      <Box sx={{ paddingTop: "3rem" }}>
+      <Box sx={{ paddingTop: "1.6rem" }}>
         <Box
           sx={{
             color: "primaryTint.main",
