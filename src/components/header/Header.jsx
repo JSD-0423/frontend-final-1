@@ -1,6 +1,6 @@
 import { AppBar, Box, IconButton, Stack, Toolbar, useTheme} from '@mui/material'
 import React from 'react'
-import Navbar from '../navbar/Navbar.jsx'
+import Navbar from '../navbar/Navbar'
 import SegmentOutlinedIcon from '@mui/icons-material/SegmentOutlined';
 import logo from '../../assets/logo.jpg'
 

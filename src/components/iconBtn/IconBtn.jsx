@@ -18,38 +18,36 @@ const iconsMap = {
     "NavigateNextOutlinedIcon":NavigateNextOutlinedIcon
   }
 
-const IconBtn = ({iconsNames,iconColor,iconPadding, iconSize ,iconPosition,pseudoIconId,pseudoType,pseudoContent,pseudoPosition,pseudoTopPos,pseudoRightPos,pseudoLeftPos,pseudoBottomPos,pseudoWidth,pseudoHeight,pseudoBorder,pseudoBorderRadius,pseudoBackgroundColor,pseudoZIndex}) => {
-  console.log(iconColor)
+const IconBtn = ({iconsNames,iconColor,iconPadding,iconSize,iconPosition,pseudoIconId,pseudoType,pseudoContent,pseudoPosition,pseudoTopPos,pseudoRightPos,pseudoLeftPos,pseudoBottomPos,pseudoWidth,pseudoHeight,pseudoBorder,pseudoBorderRadius,pseudoBackgroundColor,pseudoZIndex}) => {
   return (
-    <Stack direction="row" height="24px" width="114px">
+    <Stack direction="row">
       {iconsNames.map( (IconName) =>{ 
-        const Icon = iconsMap[IconName];
-
-        let styles = {
-          position:iconPosition,
-          color:iconColor,
-          padding:iconPadding,
-          fontSize:iconSize
-        }
-        if(pseudoIconId===IconName){
-          styles[pseudoType]={
-            content:pseudoContent,
-            position:pseudoPosition,
-            top:pseudoTopPos,
-            right:pseudoRightPos,
-            left:pseudoLeftPos, 
-            bottom:pseudoBottomPos, 
-            width:pseudoWidth,
-            height:pseudoHeight, 
-            border:pseudoBorder, 
-            borderRadius:pseudoBorderRadius,
-            backgroundColor:pseudoBackgroundColor,
-            zIndex:pseudoZIndex
+          const Icon = iconsMap[IconName];
+          let styles = {
+            position:iconPosition,
+            color:iconColor,
+            padding:iconPadding,
+            fontSize:iconSize
           }
-          return <IconButton key={IconName}  sx={styles}><Icon sx={{fontSize:iconSize}} /></IconButton>
-        }
-        return <IconButton key={IconName} sx={{position:iconPosition, color:iconColor, padding:iconPadding,fontSize:iconSize}}><Icon /></IconButton>})
-      
+          if(pseudoIconId===IconName){
+            styles[pseudoType]={
+              content:pseudoContent,
+              position:pseudoPosition,
+              top:pseudoTopPos,
+              right:pseudoRightPos,
+              left:pseudoLeftPos, 
+              bottom:pseudoBottomPos, 
+              width:pseudoWidth,
+              height:pseudoHeight, 
+              border:pseudoBorder, 
+              borderRadius:pseudoBorderRadius,
+              backgroundColor:pseudoBackgroundColor,
+              zIndex:pseudoZIndex
+            }
+          }
+          return <IconButton key={IconName} sx={styles}><Icon sx={{fontSize:iconSize}} /></IconButton>
+        })
+        
       }
     </Stack>
   )

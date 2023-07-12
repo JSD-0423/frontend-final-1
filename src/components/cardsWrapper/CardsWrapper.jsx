@@ -6,7 +6,7 @@ const CardsWrapper = ({children,wrapperHeight,wrapperBg}) => {
   return (
     <Box component='div' sx={{height:wrapperHeight, width:'100%', backgroundColor:wrapperBg}}>
         <CustomContainer>
-            {children}
+          {children}
         </CustomContainer>    
     </Box>
   )
