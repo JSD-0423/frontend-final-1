@@ -7,7 +7,6 @@ const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 function Carousel({ images }) {
   return (
-    <>
       <AutoPlaySwipeableViews>
         {images.map(({ imgPath, element }, index) => (
           <div key={index}>
@@ -25,7 +24,6 @@ function Carousel({ images }) {
           </div>
         ))}
       </AutoPlaySwipeableViews>
-    </>
   );
 }
 
