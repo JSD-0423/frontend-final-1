@@ -67,7 +67,6 @@ const HeroSection = () => {
     <Box
       sx={{
         width: "100%",
-        padding: "20px",
         boxSizing: "border-box",
         height: "450px",
         display: "flex",
