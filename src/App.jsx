@@ -1,7 +1,7 @@
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import Layout from "./components/Layout";
+import Layout from "./layout/Layout";
 import { Home } from "./pages";
 
 const App = () => {
