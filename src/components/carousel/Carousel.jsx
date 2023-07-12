@@ -1,31 +1,35 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
-import SwipeableViews from "react-swipeable-views";
-import { autoPlay } from "react-swipeable-views-utils";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
 
-const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
+import "swiper/css";
 
 function Carousel({ images }) {
   return (
-    <>
-      <AutoPlaySwipeableViews>
-        {images.map(({ imgPath, element }, index) => (
-          <div key={index}>
-            <Box
-              component="img"
-              src={imgPath}
-              sx={{
-                objectFit: "cover",
-                width: "100%",
-                borderRadius: "20px",
-                height: ["135px", "260px", "400px"],
-              }}
-            />
-            {element && element}
-          </div>
-        ))}
-      </AutoPlaySwipeableViews>
-    </>
+    <Swiper
+      modules={[Autoplay]}
+      autoplay={{
+        delay: 2500,
+        disableOnInteraction: false,
+      }}
+    >
+      {images.map(({ imgPath, element }, index) => (
+        <SwiperSlide key={index}>
+          <Box
+            component="img"
+            src={imgPath}
+            sx={{
+              objectFit: "cover",
+              width: "100%",
+              borderRadius: "20px",
+              height: ["135px", "260px", "400px"],
+            }}
+          />
+          {element && element}
+        </SwiperSlide>
+      ))}
+    </Swiper>
   );
 }
 
