@@ -17,7 +17,7 @@ const CardItem = ({cardWidth, imageHeight, imageWidth, imageBorderRadius, imageO
           <Typography variant='body1' noWrap fontWeight={{xs:'600',md:'500'}} fontSize={{xs:'14px',md:'16px'}} lineHeight={{xs:'16px',md:'20px'}} gutterBottom>{price}</Typography>
         </Box>
         <Box>
-          <IconBtn iconsNames={icons} pseudoIconId={cardItemPseudoIconId} iconSize={{xs:'18px',md:''}} iconColor={theme.palette.dark.main} iconPadding={0} pseudoType={'&:hover'} pseudoBackgroundColor={'transparent'} />
+          <IconBtn iconsNames={icons} pseudoIconId={cardItemPseudoIconId} iconSize={{xs:'18px',md:'25px'}} iconColor={theme.palette.dark.main} iconPadding={0} pseudoType={'&:hover'} pseudoBackgroundColor={'transparent'} />
         </Box>
       </Stack>
     </Box>

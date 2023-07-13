@@ -5,11 +5,14 @@ import { Box } from "@mui/material";
 import { HeroSection } from "../components";
 
 const Home = () => {
-  const collections = ['Handbags','Watches','Skincare','Jewellery','Apparels'];
   return (
-    <Box sx={{ padding: "20px" }}>
-      <HeroSection />
-    </Box>
+    <>
+      <Box sx={{ padding: "20px" }}>
+        <HeroSection />
+      </Box>
+      <TopCategories />
+      <NewArrivals />
+    </>
   );
 };
 
