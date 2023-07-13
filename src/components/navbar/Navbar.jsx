@@ -14,7 +14,7 @@ const Navbar = () => {
       <Box width="100%" height='100%' component='div' display={{xs:'none', md:'block'}}>
       <Stack direction='row' spacing={2} width='100%' color="black" >
         {collections.map((collection)=>{
-          return <Typography lineHeight='18px' fontSize="14px">{collection}</Typography>
+          return <Typography key={collection} lineHeight='18px' fontSize="14px">{collection}</Typography>
         })}
       </Stack>
       </Box>

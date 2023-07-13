@@ -6,10 +6,10 @@ const CardsWrapperHeader = ({wrapperTitle, fontColor, WrapperGoToIcon, WrapperPs
     const theme = useTheme();
   return (
     <Stack direction='row' justifyContent='space-between' alignItems='center' mb={2}>
-        <Typography component='h2' fontSize='34px' fontWeight='600' lineHeight="44px" color={fontColor} >{wrapperTitle}</Typography>
+        <Typography component='h2' fontSize={{ xs:'16px', md:'34px'}} fontWeight='600' lineHeight={{xs:'16px', md:'44px'}} color={fontColor} >{wrapperTitle}</Typography>
         <Stack direction='row' justifyContent='space-between' alignItems='center'>
-            <Typography variant='caption' fontWeight='600' lineHeight='24px' color={theme.palette.primary.main}>View All</Typography>
-            <IconBtn iconsNames={WrapperGoToIcon} pseudoIconId={WrapperPseudoIconId} iconPadding={0} iconSize={'30px'} iconColor={"black"} pseudoType={'&:hover'} pseudoBackgroundColor='transparent' />
+            <Typography variant='caption' fontWeight='600' lineHeight={{xs:'18px', md:'24px'}} color={theme.palette.primary.main}>View All</Typography>
+            <IconBtn iconsNames={WrapperGoToIcon} pseudoIconId={WrapperPseudoIconId} iconPadding={0} iconSize={{xs:'20px', md:'30px'}} iconColor={{xs:theme.palette.primary.main, md:fontColor}} pseudoType={'&:hover'} pseudoBackgroundColor='transparent' />
         </Stack>
     </Stack>
   )
