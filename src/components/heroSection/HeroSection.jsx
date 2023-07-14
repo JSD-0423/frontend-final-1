@@ -5,6 +5,7 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { TextButton, Carousel } from "../index.js";
 import HeroSectionImage1 from "../../assets/heroSection1.png";
 import HeroSectionImage2 from "../../assets/heroSection2.svg";
+import CustomContainer from "../customContainer/CustomContainer.jsx";
 
 const HeroSection = () => {
   const images = [
@@ -64,18 +65,20 @@ const HeroSection = () => {
   ];
 
   return (
-    <Box
-      sx={{
-        width: "100%",
-        boxSizing: "border-box",
-        height: "450px",
-        display: "flex",
-      }}
-    >
-      <Box sx={{ borderRadius: "20px", width: "100%" }}>
-        <Carousel images={images} />
+    <CustomContainer>
+      <Box
+        sx={{
+          width: "100%",
+          boxSizing: "border-box",
+          marginBottom:"68px",
+          display: "flex",
+        }}
+      >
+        <Box sx={{ borderRadius: "20px", width: "100%" }}>
+          <Carousel images={images} />
+        </Box>
       </Box>
-    </Box>
+    </CustomContainer>
   );
 };
 
