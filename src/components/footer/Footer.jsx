@@ -32,7 +32,6 @@ function Footer() {
         paddingLeft: ["1rem", "3.75rem", "3.75rem"],
         paddingRight: ["1rem", "3.8rem", "3.8rem"],
         height: ["auto", "auto", "342px"],
-        marginTop: "20px",
       }}
     >
       <Box sx={{ display: "flex", gap: "3.75rem" }}>
@@ -54,24 +53,24 @@ function Footer() {
             src={FacebookIcon}
             alt="Facebook Icon"
             style={{
-              width: "52px",
+              width: "13px",
               paddingTop: "6px",
               paddingBottom: "2px",
               paddingLeft: "17px",
               paddingRight: "17px",
-              height: "40px",
+              height: "2rem",
             }}
           />
           <SocialIcon
             src={InstagramIcon}
             alt="Instagram Icon"
             style={{
-              width: "52px",
+              width: "28px",
               paddingTop: "8px",
               paddingLeft: "9px",
               paddingRight: "9px",
               paddingBottom: "4px",
-              height: "43px",
+              height: "28px",
             }}
           />
           <SocialIcon src={TwitterIcon} isMUIIcon />
