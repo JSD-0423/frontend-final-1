@@ -8,7 +8,8 @@ import {
   TitledImageCard,
 } from "../components";
 import CardsWrapperHeader from "../components/cardsWrapperHeader/CardsWrapperHeader";
-
+import FilterBasedCollecttion from '../components/filterBasedCollection/FilterBasedCollecttion';
+import TopCategories from '../components/topCategories/TopCategories';
 import collection1 from "../assets/perfumeCollections1.png";
 import collection2 from "../assets/bagsCollection2.png";
 import collection3 from "../assets/watchCoolection3.png";
@@ -41,6 +42,7 @@ const Home = () => {
   return (
     <>
       <HeroSection />
+      <TopCategories />
       <NewArrivals />
       <CardsWrapper wrapperBg="primary.main">
         <CardsWrapperHeader
@@ -64,6 +66,7 @@ const Home = () => {
           ))}
         </Stack>
       </CardsWrapper>
+      <FilterBasedCollecttion />
     </>
   );
 };
