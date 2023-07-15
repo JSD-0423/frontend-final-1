@@ -11,3 +11,4 @@ export { default as CardsWrapperHeader } from './cardsWrapperHeader/CardsWrapper
 export { default as TitledImageCard } from './titledImageCard/TitledImageCard.jsx';
 export { default as ImageCard } from './ImageCard/ImageCard.jsx';
 export { default as ShopByBrands } from './shopByBrands/ShopByBrands.jsx';
+export { default as HandPickedCollections } from './handPickedCollections/HandPickedCollections.jsx';
