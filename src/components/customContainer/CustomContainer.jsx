@@ -4,8 +4,8 @@ import React from 'react'
 
 const CustomContainer = ({children}) => {
   return (
-    <Box component='div' sx={{padding:'0 24px', width:'100%', height:'100%'}}>
-        {children}
+    <Box component='div' sx={{padding:'0 20px', width:'100%', height:'100%'}}>
+      {children}
     </Box>
   )
 }

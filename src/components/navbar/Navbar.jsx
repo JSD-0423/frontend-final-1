@@ -7,7 +7,7 @@ import { useTheme } from '@emotion/react';
 const Navbar = () => {
   const theme = useTheme();
 
-  const collections = ['Handbags','Watches','Skincare','Jewellery','Apparels']
+  const collections = ['Handbags','Watches','Skincare','Jewellery','Apparels'];
 
   return (
     <Stack direction='row' spacing={{xs:0, sm:0, md:1,lg:2}} width='100%' alignItems='center'>
