@@ -8,6 +8,7 @@ const CardsWrapperHeader = ({
   WrapperGoToIcon,
   WrapperPseudoIconId,
   style,
+  showBtnOnAllSizes,
 }) => {
   const theme = useTheme();
   return (
@@ -27,7 +28,7 @@ const CardsWrapperHeader = ({
       >
         {wrapperTitle}
       </Typography>
-      {WrapperGoToIcon && WrapperPseudoIconId && (
+      {WrapperGoToIcon && WrapperPseudoIconId && showBtnOnAllSizes && (
         <Stack
           direction="row"
           justifyContent="space-between"
