@@ -6,11 +6,11 @@ import {
   NewArrivals,
   ShopByBrands,
 } from "../components";
-
 const Home = () => {
   return (
     <>
       <HeroSection />
+      <TopCategories />
       <NewArrivals />
       <HandPickedCollections />
       <ShopByBrands />
