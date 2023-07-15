@@ -12,7 +12,7 @@ const ImageCard = ({ image }) => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        WebkitFlexBasis: ["29%", "29.3%", "13.3%"],
+        WebkitFlexBasis: ["30%", "29.3%", "13.3%"],
       }}
     >
       <Box
