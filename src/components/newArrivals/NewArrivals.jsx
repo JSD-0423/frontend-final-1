@@ -38,7 +38,7 @@ const NewArrivals = () => {
       }
     ]
   return (
-    <CardsWrapper wrapperHeight={'475px'} >
+    <CardsWrapper wrapperHeight={{xs:'234px' , md:'475px'}} >
       <CardsWrapperHeader wrapperTitle={'New Arrivals'} fontColor={theme.palette.dark.main} WrapperGoToIcon={['NavigateNextOutlinedIcon']} WrapperPseudoIconId={'NavigateNextOutlinedIcon'} />
         <Stack direction="row" justifyContent='space-between' flexWrap='nowrap' spacing={{xs:2, md:3}} overflow='auto' >
           {CardIemsObj.map((card)=>{

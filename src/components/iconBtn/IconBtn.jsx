@@ -6,6 +6,7 @@ import LocalHospitalOutlinedIcon from '@mui/icons-material/LocalHospitalOutlined
 import NotificationsNoneOutlinedIcon from '@mui/icons-material/NotificationsNoneOutlined';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import NavigateNextOutlinedIcon from '@mui/icons-material/NavigateNextOutlined';
+import EastIcon from '@mui/icons-material/East';
 import { IconButton, Stack } from '@mui/material';
 
 const iconsMap = {
@@ -15,19 +16,22 @@ const iconsMap = {
     "LocalHospitalOutlinedIcon":LocalHospitalOutlinedIcon,
     "NotificationsNoneOutlinedIcon":NotificationsNoneOutlinedIcon,
     "SearchOutlinedIcon":SearchOutlinedIcon,
-    "NavigateNextOutlinedIcon":NavigateNextOutlinedIcon
+    "NavigateNextOutlinedIcon":NavigateNextOutlinedIcon,
+    "EastIcon":EastIcon
   }
 
-const IconBtn = ({iconsNames,iconColor,iconPadding,iconSize,iconPosition,pseudoIconId,pseudoType,pseudoContent,pseudoPosition,pseudoTopPos,pseudoRightPos,pseudoLeftPos,pseudoBottomPos,pseudoWidth,pseudoHeight,pseudoBorder,pseudoBorderRadius,pseudoBackgroundColor,pseudoZIndex}) => {
+const IconBtn = ({iconsNames,iconWidth,iconHeight,iconJustifyContent,iconColor,iconBackgroundColor,iconPadding,iconMargin,iconSize,iconPosition,pseudoIconId,pseudoType,pseudoContent,pseudoPosition,pseudoTopPos,pseudoRightPos,pseudoLeftPos,pseudoBottomPos,pseudoWidth,pseudoHeight,pseudoBorder,pseudoBorderRadius,pseudoBackgroundColor,pseudoZIndex}) => {
   return (
-    <Stack direction="row">
+    <Stack direction="row" justifyContent={iconJustifyContent} width={iconWidth} height={iconHeight}>
       {iconsNames.map( (IconName) =>{ 
           const Icon = iconsMap[IconName];
           let styles = {
             position:iconPosition,
             color:iconColor,
             padding:iconPadding,
-            fontSize:iconSize
+            margin:iconMargin,
+            fontSize:iconSize,
+            backgroundColor:iconBackgroundColor
           }
           if(pseudoIconId===IconName){
             styles[pseudoType]={
