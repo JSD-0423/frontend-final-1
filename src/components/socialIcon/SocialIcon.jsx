@@ -6,7 +6,7 @@ function SocialIcon({ src, alt, isMUIIcon, style }) {
     return (
       <IconComponent
         sx={{
-          width: "34px",
+          width: "45px",
           paddingTop: "6px",
           paddingBottom: "5px",
           paddingLeft: "5px",
@@ -14,7 +14,7 @@ function SocialIcon({ src, alt, isMUIIcon, style }) {
           backgroundColor: "primaryTint.main",
           color: "primary.main",
           borderRadius: "50%",
-          height: "2rem",
+          height: "3rem",
         }}
       />
     );

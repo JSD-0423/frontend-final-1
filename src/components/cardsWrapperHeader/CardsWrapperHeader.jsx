@@ -2,8 +2,8 @@ import { Box, Stack, Typography, useTheme } from '@mui/material'
 import React from 'react'
 import IconBtn from '../iconBtn/IconBtn'
 
-const CardsWrapperHeader = ({wrapperTitle, fontColor, WrapperGoToIcon, WrapperPseudoIconId}) => {
-    const theme = useTheme();
+const CardsWrapperHeader = ({wrapperTitle,fontColor,WrapperGoToIcon,WrapperPseudoIconId}) => {
+  const theme = useTheme();
   return (
     <Stack direction='row' justifyContent='space-between' alignItems='center' mb={2}>
         <Typography component='h2' fontSize={{ xs:'16px', md:'34px'}} fontWeight='600' lineHeight={{xs:'16px', md:'44px'}} color={fontColor} >{wrapperTitle}</Typography>
@@ -16,7 +16,7 @@ const CardsWrapperHeader = ({wrapperTitle, fontColor, WrapperGoToIcon, WrapperPs
           }
         </Box>
     </Stack>
-  )
-}
+  );
+};
 
-export default CardsWrapperHeader
+export default CardsWrapperHeader;
