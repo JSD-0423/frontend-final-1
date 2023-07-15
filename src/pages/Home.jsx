@@ -1,15 +1,12 @@
 import React from 'react'
 import NewArrivals from '../components/newArrivals/NewArrivals'
 import TopCategories from '../components/topCategories/TopCategories';
-import { Box } from "@mui/material";
 import { HeroSection } from "../components";
 
 const Home = () => {
   return (
     <>
-      <Box sx={{ padding: "20px" }}>
-        <HeroSection />
-      </Box>
+      <HeroSection />
       <TopCategories />
       <NewArrivals />
     </>
