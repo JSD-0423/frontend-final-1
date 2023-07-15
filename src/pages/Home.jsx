@@ -5,7 +5,8 @@ import {
   HeroSection,
   NewArrivals,
   ShopByBrands,
-  TopCategories
+  TopCategories,
+  FilterBasedCollection
 } from "../components";
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
       <NewArrivals />
       <HandPickedCollections />
       <ShopByBrands />
+      <FilterBasedCollection />
     </>
   );
 };
