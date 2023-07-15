@@ -8,6 +8,7 @@ const CardsWrapperHeader = ({
   WrapperGoToIcon,
   WrapperPseudoIconId,
   showBtnOnAllSizes,
+  style,
 }) => {
   const theme = useTheme();
   return (
@@ -16,6 +17,7 @@ const CardsWrapperHeader = ({
       justifyContent="space-between"
       alignItems="center"
       mb={2}
+      style={style}
     >
       <Typography
         component="h2"

@@ -12,3 +12,4 @@ export { default as TitledImageCard } from './titledImageCard/TitledImageCard.js
 export { default as ImageCard } from './ImageCard/ImageCard.jsx';
 export { default as ShopByBrands } from './shopByBrands/ShopByBrands.jsx';
 export { default as HandPickedCollections } from './handPickedCollections/HandPickedCollections.jsx';
+export { default as TopCategories } from './topCategories/TopCategories.jsx';

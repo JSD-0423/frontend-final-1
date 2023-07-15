@@ -5,6 +5,7 @@ import {
   HeroSection,
   NewArrivals,
   ShopByBrands,
+  TopCategories
 } from "../components";
 const Home = () => {
   return (
