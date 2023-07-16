@@ -8,3 +8,7 @@ export { default as HeroSection } from './heroSection/HeroSection.jsx';
 export { default as NewArrivals } from './newArrivals/NewArrivals.jsx';
 export { default as CardsWrapper } from './cardsWrapper/CardsWrapper.jsx';
 export { default as TitledImageCard } from './titledImageCard/TitledImageCard.jsx';
+export { default as CardsWrapperHeader} from './cardsWrapperHeader/CardsWrapperHeader.jsx';
+export { default as FilterBasedCollecttion} from './filterBasedCollection/FilterBasedCollecttion.jsx';
+export { default as TopCategories} from './topCategories/TopCategories.jsx';
+export { default as CustomBreadcrumbs} from './customBreadcrumbs/CustomBreadcrumbs.jsx';

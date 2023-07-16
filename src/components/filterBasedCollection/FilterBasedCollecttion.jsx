@@ -36,9 +36,9 @@ const FilterBasedCollecttion = () => {
   return (
     <CardsWrapper>
       <CardsWrapperHeader wrapperTitle={'Makeup & Skincare'} fontColor={theme.palette.typeHightEmphasis.main}  />
-      <Box display='grid' gap={{xs:'16px 16px', md:'40px 32px'}} gridTemplateColumns='repeat(2, minmax(156px,1fr))' gridTemplateRows='repeat(2, minmax(100px,1fr))' sx={{gridTemplateAreas:`'card-1 card-1''card-2 card-3'`}}>
+      <Box display='grid' gap={{xs:'16px 16px', md:'40px 32px'}} gridTemplateColumns='repeat(2 , 1fr)' sx={{gridTemplateAreas:`'card-1 card-1''card-2 card-3'`}}>
           {filterCardsCollection.map((card)=>{
-            return  <Box key={card.cardId} gridArea={(card.cardId === 1 && 'card-1') || (card.cardId === 2 && 'card-2') || (card.cardId === 3 && 'card-3') } borderRadius='10px'  sx={{backgroundImage:{xs:`url(${card.imageUrl.mobile})`, sm:`url(${card.imageUrl.desktop})`}, backgroundRepeat: 'no-repeat', backgroundSize:'100% 100%'}}  >
+            return  <Box key={card.cardId} height={{xs:(card.cardId===1 && '132px') || '100px', md:(card.cardId===1 && '400px') || '228px'}} gridArea={(card.cardId === 1 && 'card-1') || (card.cardId === 2 && 'card-2') || (card.cardId === 3 && 'card-3') } borderRadius='10px'  sx={{backgroundImage:{xs:`url(${card.imageUrl.mobile})`, sm:`url(${card.imageUrl.desktop})`}, backgroundRepeat: 'no-repeat', backgroundSize:'100% 100%'}}  >
                       <FilterBasedCard  cardTitle={card.cardInfo}  iconName={['EastIcon']} />
                     </Box>
           })}

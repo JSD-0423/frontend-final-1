@@ -43,7 +43,7 @@ const NewArrivals = () => {
       <CardsWrapperHeader wrapperTitle={'New Arrivals'} fontColor={theme.palette.dark.main} WrapperGoToIcon={['NavigateNextOutlinedIcon']} WrapperPseudoIconId={'NavigateNextOutlinedIcon'} />
         <Stack direction="row" justifyContent='space-between' flexWrap='nowrap' spacing={{xs:2, md:3}} overflow='auto' >
           {CardIemsObj.map((card)=>{
-            return <Link style={{textDecoration:'none'}} to='/details'>
+            return <Link key={card.id} style={{textDecoration:'none'}} to='/product-details'>
                     <CardItem  cardWidth={{xs:'136px' , md:'286px'}} fontColor={theme.palette.typeHightEmphasis.main} imageHeight={{xs:'138px',md:'286px'}} imageWidth={'100%'} imageBorderRadius={'10px'} imageObjectFit={'cover'} productName={card.productName} productType={card.productType} price={card.price} icons={['FavoriteBorderOutlinedIcon']} cardItemPseudoIconId={'FavoriteBorderOutlinedIcon'} image={card.image}/>
                   </Link>
           })}
