@@ -16,4 +16,4 @@ export { default as ShopByBrands } from './shopByBrands/ShopByBrands.jsx';
 export { default as HandPickedCollections } from './handPickedCollections/HandPickedCollections.jsx';
 export { default as TopCategories } from './topCategories/TopCategories.jsx';
 export { default as FilterBasedCollection } from './filterBasedCollection/FilterBasedCollection.jsx';
-export {default as CustomBreadcrumbs } from './customBreadcrumbs/CustomBreadcrumbs.jsx';
+export { default as CustomBreadcrumbs } from './customBreadcrumbs/CustomBreadcrumbs.jsx';
