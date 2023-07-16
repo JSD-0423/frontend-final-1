@@ -4,7 +4,7 @@ import { Box, useTheme } from '@mui/material'
 import FilterBasedCard from '../filterBasedCard/FilterBasedCard'
 import CardsWrapperHeader from '../cardsWrapperHeader/CardsWrapperHeader'
 
-const FilterBasedCollecttion = () => {
+const FilterBasedCollection = () => {
   const theme = useTheme();
 
   const filterCardsCollection = [
@@ -47,4 +47,4 @@ const FilterBasedCollecttion = () => {
   )
 }
 
-export default FilterBasedCollecttion
+export default FilterBasedCollection;
