@@ -8,3 +8,4 @@ export { default as HeroSection } from './heroSection/HeroSection.jsx';
 export { default as NewArrivals } from './newArrivals/NewArrivals.jsx';
 export { default as CardsWrapper } from './cardsWrapper/CardsWrapper.jsx';
 export { default as TitledImageCard } from './titledImageCard/TitledImageCard.jsx';
+export { default as ProductTabs } from './productTabs/ProductTabs.jsx';
