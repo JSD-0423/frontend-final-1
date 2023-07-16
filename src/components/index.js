@@ -9,6 +9,7 @@ export { default as NewArrivals } from './newArrivals/NewArrivals.jsx';
 export { default as CardsWrapper } from './cardsWrapper/CardsWrapper.jsx';
 export { default as CardsWrapperHeader } from './cardsWrapperHeader/CardsWrapperHeader.jsx';
 export { default as TitledImageCard } from './titledImageCard/TitledImageCard.jsx';
+export { default as ThumbsCarousel } from './thumbsCarousel/ThumbsCarousel.jsx';
 export { default as ImageCard } from './ImageCard/ImageCard.jsx';
 export { default as ShopByBrands } from './shopByBrands/ShopByBrands.jsx';
 export { default as HandPickedCollections } from './handPickedCollections/HandPickedCollections.jsx';
