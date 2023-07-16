@@ -17,7 +17,7 @@ const CustomBreadcrumbs = () => {
         {pages.map((page,index)=>{
           return (
             (pages.length!==1 && index!==pages.length-1 && 
-            <Link key={page==='/'&& 'home'}  underline='hover' href={page}>
+            <Link key={(page==='/'&& 'home') || page}  underline='hover' href={page}>
             {(page==='/' && 'Home') || page}
             </Link>)
           )
