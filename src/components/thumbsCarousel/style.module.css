@@ -1,0 +1,28 @@
+.swiperImage {
+  display: block;
+  width: 420px;
+  height: 420px;
+  object-fit: contain;
+}
+
+.thumbImg {
+  display: block;
+  width: 75px;
+  height: 75px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.mySwiper {
+  width: 85%;
+  padding: 24px 20px 10px 0px;
+}
+
+.swiperSlide {
+  width: calc(100% / 4);
+  height: 100%;
+}
+
+.mainSwiper {
+  width: 420px;
+}
