@@ -10,7 +10,7 @@ import {
   AccordionSummary,
   AccordionDetails,
 } from "@mui/material";
-import { CustomContainer } from "../index.js";
+import { CustomContainer, CustomTabPanel } from "../index.js";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 const ProductTabs = () => {
@@ -130,24 +130,3 @@ const ProductTabs = () => {
 };
 
 export default ProductTabs;
-
-function CustomTabPanel(props) {
-  const { children, value, index, ...other } = props;
-
-  return (
-    <div role="tabpanel" hidden={value !== index} id={index} {...other}>
-      {value === index && (
-        <Box
-          sx={{
-            p: 3,
-            paddingLeft: "0px",
-            color: "typeLowEmphasis.main",
-            whiteSpace: "pre-line",
-          }}
-        >
-          <Typography>{children}</Typography>
-        </Box>
-      )}
-    </div>
-  );
-}

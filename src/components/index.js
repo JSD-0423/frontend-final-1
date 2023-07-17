@@ -17,8 +17,6 @@ export { default as ShopByBrands } from './shopByBrands/ShopByBrands.jsx';
 export { default as HandPickedCollections } from './handPickedCollections/HandPickedCollections.jsx';
 export { default as TopCategories } from './topCategories/TopCategories.jsx';
 export { default as FilterBasedCollection } from './filterBasedCollection/FilterBasedCollection.jsx';
-<<<<<<< HEAD
 export { default as CustomContainer } from './customContainer/CustomContainer.jsx';
-=======
 export { default as CustomBreadcrumbs } from './customBreadcrumbs/CustomBreadcrumbs.jsx';
->>>>>>> cde5a532828512f4d838441ac399da602ff4c76e
+export { default as CustomTabPanel } from './productTabs/CustomPanel.jsx';
