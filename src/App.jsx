@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import Layout from "./layout/Layout";
 import { Home } from "./pages";
+import Pdp from "./pages/Pdp";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -11,8 +12,12 @@ const App = () => {
       element: <Layout />,
       children: [
         {
-          path: "",
+          path: "/",
           element: <Home />,
+        },
+        {
+          path:'/product-details',
+          element:<Pdp />
         },
       ],
     },

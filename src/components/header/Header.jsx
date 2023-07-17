@@ -1,4 +1,4 @@
-import { AppBar, Box, IconButton, Stack, Toolbar, useTheme} from '@mui/material'
+import { AppBar, Box, IconButton, Link, Stack, Toolbar, useTheme} from '@mui/material'
 import React from 'react'
 import Navbar from '../navbar/Navbar'
 import SegmentOutlinedIcon from '@mui/icons-material/SegmentOutlined';
@@ -11,7 +11,9 @@ const Header = () => {
         <Toolbar sx={{height:'80px', width:'100%'}}>
           <Stack direction='row' alignItems='center' width='100%' spacing={{xs:0, md:4}}>
             <IconButton sx={{display:{ xs:'none', md:'block'}}} >
-              <img style={{width:"108px", height:"22px"}} src={logo} alt="logo" />
+              <Link underline='none' href='/'>
+                <img style={{width:"108px", height:"22px"}} src={logo} alt="logo" />
+              </Link>
             </IconButton>
             <IconButton  sx={{display:{ xs:'block', md:'none'}, p:'0 8px'}} >
               <Box component='div' display="flex" alignItems='center'>
