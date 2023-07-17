@@ -18,3 +18,4 @@ export { default as HandPickedCollections } from './handPickedCollections/HandPi
 export { default as TopCategories } from './topCategories/TopCategories.jsx';
 export { default as FilterBasedCollection } from './filterBasedCollection/FilterBasedCollection.jsx';
 export { default as CustomContainer } from './customContainer/CustomContainer.jsx';
+export { default as CustomBreadcrumbs } from './customBreadcrumbs/CustomBreadcrumbs.jsx';

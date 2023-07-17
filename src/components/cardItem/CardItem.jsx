@@ -2,7 +2,7 @@ import { Box, IconButton, Stack, Typography, useTheme } from '@mui/material'
 import React from 'react'
 import IconBtn from '../iconBtn/IconBtn'
 
-const CardItem = ({cardWidth, imageHeight, imageWidth, imageBorderRadius, imageObjectFit, productName, productType, price, icons, cardItemPseudoIconId, image}) => {
+const CardItem = ({cardWidth, imageHeight, imageWidth, imageBorderRadius, imageObjectFit, productName, productType, price, icons, cardItemPseudoIconId, image,fontColor}) => {
   const theme = useTheme();
 
   return (
@@ -12,9 +12,9 @@ const CardItem = ({cardWidth, imageHeight, imageWidth, imageBorderRadius, imageO
       </Box>
       <Stack width="100%" direction='row' justifyContent='space-between'>
         <Box width="90%">
-          <Typography variant='body1' noWrap fontWeight={{xs:'600',md:'500'}} fontSize={{xs:'12px',md:'16px'}} lineHeight={{xs:'16px',md:'20px'}} gutterBottom>{productName}</Typography>
+          <Typography variant='body1' noWrap color={fontColor} fontWeight={{xs:'600',md:'500'}} fontSize={{xs:'12px',md:'16px'}} lineHeight={{xs:'16px',md:'20px'}} gutterBottom>{productName}</Typography>
           <Typography variant='body1' noWrap color={theme.palette.typeLowEmphasis.main} fontWeight={{xs:'500',md:'400'}} fontSize={{xs:'12px',md:'14px'}} lineHeight={{xs:'16px',md:'20px'}} gutterBottom>{productType}</Typography>
-          <Typography variant='body1' noWrap fontWeight={{xs:'600',md:'500'}} fontSize={{xs:'14px',md:'16px'}} lineHeight={{xs:'16px',md:'20px'}} gutterBottom>{price}</Typography>
+          <Typography variant='body1' noWrap color={fontColor} fontWeight={{xs:'600',md:'500'}} fontSize={{xs:'14px',md:'16px'}} lineHeight={{xs:'16px',md:'20px'}} gutterBottom>{price}</Typography>
         </Box>
         <Box>
           <IconBtn iconsNames={icons} pseudoIconId={cardItemPseudoIconId} iconSize={{xs:'18px',md:'25px'}} iconColor={theme.palette.dark.main} iconPadding={0} pseudoType={'&:hover'} pseudoBackgroundColor={'transparent'} />
