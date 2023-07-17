@@ -3,6 +3,7 @@ import CardsWrapper from "../cardsWrapper/CardsWrapper";
 import { Stack, useTheme } from "@mui/material";
 import CardItem from "../cardItem/CardItem";
 import CardsWrapperHeader from "../cardsWrapperHeader/CardsWrapperHeader";
+import { Link } from 'react-router-dom';
 
 const NewArrivals = () => {
   const theme = useTheme();
@@ -37,7 +38,7 @@ const NewArrivals = () => {
     },
   ];
   return (
-    <CardsWrapper wrapperHeight={"475px"}>
+    <CardsWrapper>
       <CardsWrapperHeader
         wrapperTitle={"New Arrivals"}
         fontColor={theme.palette.dark.main}
@@ -54,20 +55,22 @@ const NewArrivals = () => {
       >
         {CardIemsObj.map((card) => {
           return (
-            <CardItem
-              key={card.id}
-              cardWidth={{ xs: "136px", md: "286px" }}
-              imageHeight={{ xs: "138px", md: "286px" }}
-              imageWidth={"100%"}
-              imageBorderRadius={"10px"}
-              imageObjectFit={"cover"}
-              productName={card.productName}
-              productType={card.productType}
-              price={card.price}
-              icons={["FavoriteBorderOutlinedIcon"]}
-              cardItemPseudoIconId={"FavoriteBorderOutlinedIcon"}
-              image={card.image}
-            />
+            <Link key={card.id} style={{textDecoration:'none'}} to='/product-details'>
+              <CardItem
+                key={card.id}
+                cardWidth={{ xs: "136px", md: "286px" }}
+                imageHeight={{ xs: "138px", md: "286px" }}
+                imageWidth={"100%"}
+                imageBorderRadius={"10px"}
+                imageObjectFit={"cover"}
+                productName={card.productName}
+                productType={card.productType}
+                price={card.price}
+                icons={["FavoriteBorderOutlinedIcon"]}
+                cardItemPseudoIconId={"FavoriteBorderOutlinedIcon"}
+                image={card.image}
+              />
+            </Link>
           );
         })}
       </Stack>

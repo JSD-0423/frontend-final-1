@@ -19,7 +19,7 @@ const FilterBasedCard = ({cardTitle,iconName}) => {
       {cardTitle === '15% off and more!' &&
         <Stack direction='row' width='100%' height='100%' justifyContent='flex-end'>
           <Stack direction='column'  pr={{xs:'11px' , md :'35px'}} pt={{xs:'11px' , md:'26px'}} pb={{xs:'11px' , md:'26px'}} width={{xs:'54%' , md:'33%'}} >
-              <Typography textAlign='center' height={{xs:'46px' , md:'104px'}} width='100%' margin={{xs:'0 0 19px 0' , md:'0 0 21px 0'}} fontWeight={{xs:'800' , md:'700'}} lineHeight={{xs:'16px' , md:'52px'}} fontSize={{xs:'14px', md:'40px'}} color='#A53F64'>
+              <Typography textAlign='center' height={{xs:'32px' , md:'104px'}} width='100%' margin={{xs:'0 0 19px 0' , md:'0 0 21px 0'}} fontWeight={{xs:'800' , md:'700'}} lineHeight={{xs:'16px' , md:'52px'}} fontSize={{xs:'14px', md:'40px'}} color='#A53F64'>
                 {cardTitle}
               </Typography>
               <IconBtn iconsNames={iconName} iconColor={'#A53F64'} iconJustifyContent={'flex-end'}  iconSize={{xs:'20px' , md:'30px'}} iconBackgroundColor={theme.palette.grey.main} pseudoType={'&:hover'} pseudoIconId={'EastIcon'} pseudoBackgroundColor={theme.palette.grey.main} />
@@ -29,7 +29,7 @@ const FilterBasedCard = ({cardTitle,iconName}) => {
       {cardTitle === 'Popular in the community!' &&
         <Stack direction='row' width='100%' height='100%' justifyContent='flex-end'>
           <Stack direction='column' pr={{xs:'11px' , md :'35px'}} pt={{xs:'11px' , md:'26px'}} pb={{xs:'11px' , md:'26px'}} width={{xs:'61%' , md:'44%'}}>
-            <Typography textAlign='center' height={{xs:'46px' , md:'104px'}}  width='100%' margin={{xs:'0 0 19px 0' , md:'0 0 21px 0'}} fontWeight={{xs:'800' , md:'700'}} lineHeight={{xs:'16px' , md:'52px'}} fontSize={{xs:'14px', md:'40px'}} color={theme.palette.primary.main}>
+            <Typography textAlign='center' height={{xs:'32px' , md:'104px'}}  width='100%' margin={{xs:'0 0 19px 0' , md:'0 0 21px 0'}} fontWeight={{xs:'800' , md:'700'}} lineHeight={{xs:'16px' , md:'52px'}} fontSize={{xs:'14px', md:'40px'}} color={theme.palette.primary.main}>
               {cardTitle}
             </Typography>
               <IconBtn iconsNames={iconName} iconColor={theme.palette.primary.main} iconJustifyContent={'flex-end'} iconSize={{xs:'20px' , md:'30px'}} iconBackgroundColor={'#17494D29'} pseudoType={'&:hover'} pseudoIconId={'EastIcon'} pseudoBackgroundColor={'#17494D29'} />
