@@ -1,8 +1,7 @@
-import { Stack, Typography, useTheme } from '@mui/material'
+import { Stack, Typography } from '@mui/material'
 import React from 'react'
 
 const AvailablePrices = ({pSpecialOffer,pOldPrice,pPrice,fontStyles}) => {
-    const theme = useTheme();
   return (
     <Stack spacing={2} direction='row' alignItems='center' width='100%' height='52px'>
         <Typography variant='body1' sx={fontStyles.pPrice} >
