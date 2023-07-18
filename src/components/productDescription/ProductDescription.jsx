@@ -33,7 +33,7 @@ const ProductDescription = ({pName, pDesc, pRating, pPrice, pOldPrice, pSpecialO
             <Typography variant='h1' fontSize={{xs:'16px', md:'34px'}} lineHeight={{xs:'20px',md:'44px'}} fontWeight={{xs:'500', md:'600'}} color={theme.palette.dark.main}>
                 {pName}
             </Typography>
-            <Typography color={theme.palette.typeLowEmphasis.main} fontSize={{xs:'14px', md:'20px'}} lineHeight={{xs:'18px', md:'26'}} fontWeight={{xs:'500', md:'600'}}>
+            <Typography color={theme.palette.typeLowEmphasis.main} fontSize={{xs:'14px', md:'20px'}} lineHeight={{xs:'18px', md:'26px'}} fontWeight={{xs:'500', md:'600'}}>
                 {pDesc}
             </Typography>
         </Box>
@@ -55,7 +55,7 @@ const ProductDescription = ({pName, pDesc, pRating, pPrice, pOldPrice, pSpecialO
                 Add to bag
                 </Typography>
             </Button>
-            <Button variant="outlined" sx={{width:{xs:'50%', md:'240px'}, padding:"5px" , textTransform:'none' ,border:`2px solid ${theme.palette.primary.main}`, '&:hover':{backgroundColor:'rgb(53 58 61 / 14%)'} , borderRadius:'8px'}}>
+            <Button variant="outlined" sx={{width:{xs:'50%', md:'240px'}, padding:"5px" , textTransform:'none' ,border:`2px solid ${theme.palette.primary.main}`, '&:hover':{backgroundColor:'rgb(53 58 61 / 14%)', border:`2px solid ${theme.palette.primary.main}`} , borderRadius:'8px'}}>
                 <IconBtn iconsNames={['FavoriteBorderOutlinedIcon']} iconJustifyContent={'center'} iconColor={theme.palette.primary.main} iconBackgroundColor={'transparent'} disableRippleEffect={true} iconPadding={'0'} ></IconBtn>
                 <Typography width='100%' fontWeight='600' fontSize='14px' lineHeight='normal' ml={{xs:0, md:1}} color={theme.palette.primary.main}>
                 Add To Wishlist

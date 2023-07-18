@@ -1,6 +1,6 @@
 import React from 'react'
 import { Box, Stack } from '@mui/material'
-import{ CustomContainer,ProductDescription,ThumbCarousel,Carousel } from '../components'
+import{ CustomContainer,ProductDescription,ThumbCarousel,Carousel, ProductTabs } from '../components'
 
 const ProductDetails = () => {
   const images = [
@@ -31,17 +31,20 @@ const ProductDetails = () => {
   
 ]
   return (
-    <CustomContainer>
-      <Stack direction={{xs:'column', md:'row'}} flexWrap='nowrap' spacing={3}>
-        <Box width='605px' display={{xs:'none', md:'block'}} >
-          <ThumbCarousel productImages={images} />
-        </Box>
-        <Box width={'100%'}>
-          <Carousel location={'product-details'} images={images} />
-        </Box>
-          <ProductDescription pName={'Coach'} pDesc={'Leather Coach Bag with adjustable starps.'} pPrice={'$54.69'} pOldPrice={'$78.66'} pSpecialOffer={'50%OFF'} pRating={4} />
-      </Stack>
-    </CustomContainer>
+    <>
+      <CustomContainer>
+        <Stack mb={{xs:2, md:5}} direction={{xs:'column', md:'row'}} flexWrap='nowrap' spacing={3}>
+          <Box width='605px' display={{xs:'none', md:'block'}} >
+            <ThumbCarousel productImages={images} />
+          </Box>
+          <Box display={{xs:'block', md:'none'}} width={'100%'}>
+            <Carousel location={'product-details'} images={images} />
+          </Box>
+            <ProductDescription pName={'Coach'} pDesc={'Leather Coach Bag with adjustable starps.'} pPrice={'$54.69'} pOldPrice={'$78.66'} pSpecialOffer={'50%OFF'} pRating={4} />
+        </Stack>
+      </CustomContainer>
+        <ProductTabs />
+    </>
   )
 }
 

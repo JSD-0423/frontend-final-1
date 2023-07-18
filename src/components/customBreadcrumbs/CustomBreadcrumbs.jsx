@@ -14,7 +14,7 @@ const CustomBreadcrumbs = () => {
   })
   return (
     <CustomContainer>
-      <Box mb={5} display={(pages.length!==1 && 'block') || 'none'}>
+      <Box mb={{xs:1, md:5}} display={(pages.length!==1 && 'block') || 'none'}>
         <Breadcrumbs separator={<ChevronRightIcon sx={{color:theme.palette.dark.main}} />} aria-label='breadcrumb'>
           {pages.map((page,index)=>{
             return (
