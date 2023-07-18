@@ -29,7 +29,7 @@ function Footer() {
         justifyContent: "space-between",
         color: "lightText.main",
         paddingTop: "2rem",
-        paddingLeft: ["1rem", "3.75rem", "3.75rem"],
+        paddingLeft: ["1rem", "2.75rem", "3.75rem"],
         paddingRight: ["1rem", "3.8rem", "3.8rem"],
         height: ["auto", "auto", "342px"],
         marginTop: "20px",

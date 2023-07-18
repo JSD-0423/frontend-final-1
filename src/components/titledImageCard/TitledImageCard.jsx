@@ -7,14 +7,14 @@ const TitledImageCard = ({ image, title }) => {
       component="div"
       sx={{
         backgroundImage: `url(${image})`,
-        backgroundSize: "cover",
+        backgroundSize: "100% 107%",
         backgroundRepeat: "no-repeat",
-        width: ["160px", "280px"],
-        height: ["152px", "280px"],
+        width: ["170px", "280px"],
+        height: ["152px", "282px"],
         borderRadius: "16px",
         display: "flex",
         overflow: "hidden",
-        WebkitFlexBasis: ["43%", "44%", "45%", "22%", "22%"],
+        WebkitFlexBasis: ["45%", "45.5%", "46.8%", "22.5%", "22%"],
       }}
     >
       <div
@@ -33,7 +33,7 @@ const TitledImageCard = ({ image, title }) => {
             marginBottom: "16px",
             fontSize: ["14px", "24px"],
             fontWeight: ["500", "600"],
-            color: "typeHightEmphasis.main",
+            color: "typeHighEmphasis.main",
           }}
         >
           {title}

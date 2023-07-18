@@ -1,5 +1,6 @@
 import { Box, Stack, Typography, useTheme } from "@mui/material";
 import React from "react";
+import { Link } from "react-router-dom";
 import IconBtn from "../iconBtn/IconBtn";
 
 const CardsWrapperHeader = ({
@@ -30,27 +31,30 @@ const CardsWrapperHeader = ({
       </Typography>
       <Box>
         {WrapperGoToIcon && WrapperPseudoIconId && showBtnOnAllSizes && (
-          <Stack direction="row" alignItems="center">
-            <Typography
-              whiteSpace="nowrap"
-              width="100%"
-              variant="caption"
-              fontWeight="600"
-              lineHeight={{ xs: "18px", md: "24px" }}
-              color={theme.palette.primary.main}
-            >
-              View All
-            </Typography>
-            <IconBtn
-              iconsNames={WrapperGoToIcon}
-              pseudoIconId={WrapperPseudoIconId}
-              iconPadding={0}
-              iconSize={{ xs: "20px", md: "30px" }}
-              iconColor={{ xs: theme.palette.primary.main, md: fontColor }}
-              pseudoType={"&:hover"}
-              pseudoBackgroundColor="transparent"
-            />
-          </Stack>
+          <Link to="/product-details" style={{textDecoration: "none" }}>
+            <Stack direction="row" alignItems="center">
+              <Typography
+                whiteSpace="nowrap"
+                width="100%"
+                variant="caption"
+                fontWeight="600"
+                fontSize="14px"
+                lineHeight={{ xs: "18px", md: "24px" }}
+                color={theme.palette.primary.main}
+              >
+                View All
+              </Typography>
+              <IconBtn
+                iconsNames={WrapperGoToIcon}
+                pseudoIconId={WrapperPseudoIconId}
+                iconPadding={0}
+                iconSize={{ xs: "20px", md: "30px" }}
+                iconColor={{ xs: theme.palette.primary.main, md: fontColor }}
+                pseudoType={"&:hover"}
+                pseudoBackgroundColor="transparent"
+              />
+            </Stack>
+          </Link>
         )}
       </Box>
     </Stack>

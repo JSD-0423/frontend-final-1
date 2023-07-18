@@ -11,6 +11,7 @@ function TitledList({ title, list }) {
         variant="h6"
         gutterBottom
         sx={{ color: theme.palette.bright.main }}
+        fontSize={["1rem", "1.25rem"]}
       >
         {title}
       </Typography>
