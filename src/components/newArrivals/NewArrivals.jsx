@@ -4,7 +4,6 @@ import { Link, Stack, useTheme } from "@mui/material";
 import CardItem from "../cardItem/CardItem";
 import CardsWrapperHeader from "../cardsWrapperHeader/CardsWrapperHeader";
 
-
 const NewArrivals = () => {
   const theme = useTheme();
   let CardIemsObj = [
