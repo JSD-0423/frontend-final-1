@@ -1,3 +1,5 @@
+import { Box, Typography } from "@mui/material";
+
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
 

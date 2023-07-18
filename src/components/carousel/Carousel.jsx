@@ -5,7 +5,7 @@ import { Autoplay } from "swiper/modules";
 
 import "swiper/css";
 
-function Carousel({ images }) {
+function Carousel({ images, location }) {
   return (
     <Swiper
       modules={[Autoplay]}
@@ -16,6 +16,18 @@ function Carousel({ images }) {
     >
       {images.map(({ imgPath, element }, index) => (
         <SwiperSlide key={index}>
+          {(location ==='product-details' &&
+            <Box
+            component="img"
+            src={imgPath}
+            sx={{
+              objectFit: "cover",
+              width: "100%",
+              borderRadius: "20px",
+              height: ["100%"],
+            }}
+          />
+          ) || (
           <Box
             component="img"
             src={imgPath}
@@ -25,7 +37,10 @@ function Carousel({ images }) {
               borderRadius: "20px",
               height: ["135px", "260px", "400px"],
             }}
-          />
+          />)
+          
+          }
+
           {element && element}
         </SwiperSlide>
       ))}

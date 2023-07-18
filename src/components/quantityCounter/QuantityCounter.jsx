@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
-import { Box, Button, useTheme } from "@mui/material";
+import { Box, Button, Stack, Typography, useTheme } from "@mui/material";
 
 const QuantityCounter = () => {
   const [quantityCount, setQuantityCount] = useState(1);
@@ -20,21 +20,25 @@ const QuantityCounter = () => {
   return (
     <Box
       sx={{
-        border: `1px solid ${theme.palette.primary.main}`,
+        display:'flex',
         width: "fit-content",
-        borderRadius: "4px",
         padding: "1px",
       }}
     >
-      <Button onClick={handleDecrement} sx={{ minWidth: "0", padding: "4px" }}>
-        <RemoveIcon sx={{ fontSize: "18px", color: "black" }} />
-      </Button>
-      <span style={{ fontSize: "14px", marginTop: "4px" }}>
-        {quantityCount}
-      </span>
-      <Button onClick={handleIncrement} sx={{ minWidth: "0", padding: "4px" }}>
-        <AddIcon sx={{ fontSize: "18px", color: "black" }} />
-      </Button>
+      <Typography fontWeight='600' fontSize='20px' lineHeight='26px' color={theme.palette.dark.main} mr={1}>
+        Quantity:
+      </Typography>
+      <Stack direction='row' border={`1px solid ${theme.palette.primary.main}`} borderRadius="4px">
+        <Button onClick={handleDecrement} sx={{ minWidth: "0", padding: "4px" }}>
+          <RemoveIcon sx={{ fontSize: "18px", color: "black" }} />
+        </Button>
+        <span style={{ fontSize: "14px", marginTop: "4px" }}>
+          {quantityCount}
+        </span>
+        <Button onClick={handleIncrement} sx={{ minWidth: "0", padding: "4px" }}>
+          <AddIcon sx={{ fontSize: "18px", color: "black" }} />
+        </Button>
+      </Stack>
     </Box>
   );
 };
