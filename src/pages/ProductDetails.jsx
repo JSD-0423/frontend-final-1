@@ -37,7 +37,7 @@ const ProductDetails = () => {
           <Box width='605px' display={{xs:'none', md:'block'}} >
             <ThumbCarousel productImages={images} />
           </Box>
-          <Box display={{xs:'block', md:'none'}} width={'100%'}>
+          <Box display={{xs:'block', md:'none'}}>
             <Carousel location={'product-details'} images={images} />
           </Box>
             <ProductDescription pName={'Coach'} pDesc={'Leather Coach Bag with adjustable starps.'} pPrice={'$54.69'} pOldPrice={'$78.66'} pSpecialOffer={'50%OFF'} pRating={4} />
