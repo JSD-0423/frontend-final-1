@@ -10,7 +10,7 @@ const colors = {
     bright: '#FFFFFF',
     grey: '#F1F1F1',
     lightText: '#B6B6B6',
-    typeHightEmphasis: '#171520',
+    typeHighEmphasis: '#171520',
     typeLowEmphasis: '#626262',
 };
 
@@ -43,8 +43,8 @@ const theme = createTheme({
         lightText: {
             main: colors.lightText,
         },
-        typeHightEmphasis: {
-            main: colors.typeHightEmphasis,
+        typeHighEmphasis: {
+            main: colors.typeHighEmphasis,
         },
         typeLowEmphasis: {
             main: colors.typeLowEmphasis,
