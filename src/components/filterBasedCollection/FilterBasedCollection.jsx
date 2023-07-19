@@ -7,31 +7,30 @@ const FilterBasedCollection = () => {
 
   const filterCardsCollection = [
     {
-      cardId: 1,
-      cardTitle: "Lifestyle",
-      cardInfo: "Makeup Accessories from Top Brands",
-      imageUrl: {
-        desktop: "https://images2.imgbox.com/4c/50/SdVeqLHx_o.png",
-        mobile: "https://images2.imgbox.com/17/94/7sNiYkmp_o.png",
-      },
+      cardId:1,
+      cardInfo:"Limited Edition Products",
+      imageUrl:{
+        desktop:'https://images2.imgbox.com/4c/50/SdVeqLHx_o.png',
+        mobile:'https://images2.imgbox.com/17/94/7sNiYkmp_o.png'
+      }
     },
     {
-      cardId: 2,
-      cardInfo: "Skincare Essentials",
-      imageUrl: {
-        desktop: "https://images2.imgbox.com/5b/98/kKo9O6NK_o.png",
-        mobile: "https://images2.imgbox.com/79/63/7fEtwpCB_o.png",
-      },
+      cardId:2,
+      cardInfo:"15% Off and More!",
+      imageUrl:{
+        desktop:'https://images2.imgbox.com/5b/98/kKo9O6NK_o.png',
+        mobile:'https://images2.imgbox.com/79/63/7fEtwpCB_o.png'
+      }
     },
     {
-      cardId: 3,
-      cardInfo: "Facepacks & Peels",
-      imageUrl: {
-        desktop: "https://images2.imgbox.com/ff/32/VFERQnl5_o.png",
-        mobile: "https://images2.imgbox.com/56/e5/h3dhTM3v_o.png",
-      },
-    },
-  ];
+      cardId:3,
+      cardInfo:"Popular in the community!",
+      imageUrl:{
+        desktop:'https://images2.imgbox.com/ff/32/VFERQnl5_o.png',
+        mobile:'https://images2.imgbox.com/56/e5/h3dhTM3v_o.png'
+      }
+    }
+  ]
   return (
     <CardsWrapper>
       <Box
@@ -64,7 +63,6 @@ const FilterBasedCollection = () => {
               }}
             >
               <FilterBasedCard
-                cardTitle={card.cardTitle}
                 cardInfo={card.cardInfo}
                 iconName={["EastIcon"]}
               />

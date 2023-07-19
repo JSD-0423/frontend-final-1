@@ -2,11 +2,11 @@ import { Stack, Typography, useTheme } from "@mui/material";
 import React from "react";
 import IconBtn from "../iconBtn/IconBtn";
 
-const FilterBasedCard = ({ cardTitle, cardInfo, iconName }) => {
+const FilterBasedCard = ({ cardInfo, iconName }) => {
   const theme = useTheme();
   return (
     <>
-      {cardInfo === "Makeup Accessories from Top Brands" && (
+      {cardInfo === "Limited Edition Products" && (
         <Stack
           direction="row"
           width="100%"
@@ -18,14 +18,6 @@ const FilterBasedCard = ({ cardTitle, cardInfo, iconName }) => {
         >
           <Stack direction="column" width={{ xs: "42%", md: "45%" }}>
             <Typography
-              invariant="p"
-              color="brown.main"
-              fontSize={["18px", "25px", "30px"]}
-              textTransform="uppercase"
-            >
-              {cardTitle}
-            </Typography>
-            <Typography
               width="100%"
               height="auto"
               fontWeight={{ xs: "800", md: "700" }}
@@ -36,10 +28,19 @@ const FilterBasedCard = ({ cardTitle, cardInfo, iconName }) => {
             >
               {cardInfo}
             </Typography>
+            <IconBtn
+              iconsNames={iconName}
+              iconColor={"brown.main"}
+              iconSize={{ xs: "20px", md: "30px" }}
+              iconBackgroundColor={"transparentBrown.main"}
+              pseudoType={"&:hover"}
+              pseudoIconId={"EastIcon"}
+              pseudoBackgroundColor={"transparentBrown.main"}
+            />
           </Stack>
         </Stack>
       )}
-      {cardInfo === "Skincare Essentials" && (
+      {cardInfo === "15% Off and More!" && (
         <Stack
           direction="row"
           width="100%"
@@ -79,7 +80,7 @@ const FilterBasedCard = ({ cardTitle, cardInfo, iconName }) => {
           </Stack>
         </Stack>
       )}
-      {cardInfo === "Facepacks & Peels" && (
+      {cardInfo === "Popular in the community!" && (
         <Stack
           direction="row"
           width="100%"
@@ -99,7 +100,7 @@ const FilterBasedCard = ({ cardTitle, cardInfo, iconName }) => {
               width="100%"
               margin={{ xs: "0 0 19px 0", md: "0 0 21px 0" }}
               fontWeight={{ xs: "800", md: "700" }}
-              lineHeight={{ xs: "16px", md: "52px" }}
+              lineHeight={{ xs: "16px", md: "43px" }}
               fontSize={["14px", "20px", "35px", "40px"]}
               color={theme.palette.primary.main}
             >
