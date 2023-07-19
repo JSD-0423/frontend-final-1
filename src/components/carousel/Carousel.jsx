@@ -5,7 +5,7 @@ import { Autoplay } from "swiper/modules";
 
 import "swiper/css";
 
-function Carousel({ images }) {
+function Carousel({ images, location }) {
   return (
     <Swiper
       modules={[Autoplay]}
@@ -23,7 +23,7 @@ function Carousel({ images }) {
               objectFit: "cover",
               width: "100%",
               borderRadius: "20px",
-              height: ["135px", "260px", "400px"],
+              height:location ==='product-details' && "100%" || ["135px", "260px", "400px"],
             }}
           />
           {element && element}

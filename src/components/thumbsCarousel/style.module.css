@@ -1,7 +1,7 @@
 .swiperImage {
   display: block;
-  width: 420px;
-  height: 420px;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
 }
 
@@ -21,8 +21,4 @@
 .swiperSlide {
   width: calc(100% / 4);
   height: 100%;
-}
-
-.mainSwiper {
-  width: 420px;
 }

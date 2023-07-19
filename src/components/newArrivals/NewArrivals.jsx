@@ -1,9 +1,8 @@
 import React from "react";
 import CardsWrapper from "../cardsWrapper/CardsWrapper";
-import { Stack, useTheme } from "@mui/material";
+import { Link, Stack, useTheme } from "@mui/material";
 import CardItem from "../cardItem/CardItem";
 import CardsWrapperHeader from "../cardsWrapperHeader/CardsWrapperHeader";
-import { Link } from 'react-router-dom';
 
 const NewArrivals = () => {
   const theme = useTheme();
@@ -55,7 +54,7 @@ const NewArrivals = () => {
       >
         {CardIemsObj.map((card) => {
           return (
-            <Link key={card.id} style={{textDecoration:'none'}} to='/product-details'>
+            <Link key={card.id} sx={{textDecoration:'none', '&:visited':theme.palette.typeHightEmphasis.main}} href='/product-details'>
               <CardItem
                 key={card.id}
                 cardWidth={{ xs: "136px", md: "286px" }}
@@ -69,6 +68,7 @@ const NewArrivals = () => {
                 icons={["FavoriteBorderOutlinedIcon"]}
                 cardItemPseudoIconId={"FavoriteBorderOutlinedIcon"}
                 image={card.image}
+                fontColor={theme.palette.typeHightEmphasis.main}
               />
             </Link>
           );

@@ -20,7 +20,7 @@ const iconsMap = {
     "EastIcon":EastIcon
   }
 
-const IconBtn = ({iconsNames,iconWidth,iconHeight,iconJustifyContent,iconColor,iconBackgroundColor,iconPadding,iconMargin,iconSize,iconPosition,pseudoIconId,pseudoType,pseudoContent,pseudoPosition,pseudoTopPos,pseudoRightPos,pseudoLeftPos,pseudoBottomPos,pseudoWidth,pseudoHeight,pseudoBorder,pseudoBorderRadius,pseudoBackgroundColor,pseudoZIndex}) => {
+const IconBtn = ({iconsNames,iconWidth,iconHeight,iconJustifyContent,iconColor,iconBackgroundColor,iconPadding,iconMargin,iconSize,iconPosition,disableRippleEffect,pseudoIconId,pseudoType,pseudoContent,pseudoPosition,pseudoTopPos,pseudoRightPos,pseudoLeftPos,pseudoBottomPos,pseudoWidth,pseudoHeight,pseudoBorder,pseudoBorderRadius,pseudoBackgroundColor,pseudoZIndex}) => {
   return (
     <Stack direction="row" justifyContent={iconJustifyContent} width={iconWidth} height={iconHeight}>
       {iconsNames.map( (IconName) =>{ 
@@ -31,7 +31,7 @@ const IconBtn = ({iconsNames,iconWidth,iconHeight,iconJustifyContent,iconColor,i
             padding:iconPadding,
             margin:iconMargin,
             fontSize:iconSize,
-            backgroundColor:iconBackgroundColor
+            backgroundColor:iconBackgroundColor,
           }
           if(pseudoIconId===IconName){
             styles[pseudoType]={
@@ -49,7 +49,7 @@ const IconBtn = ({iconsNames,iconWidth,iconHeight,iconJustifyContent,iconColor,i
               zIndex:pseudoZIndex
             }
           }
-          return <IconButton key={IconName} sx={styles}><Icon sx={{fontSize:iconSize}} /></IconButton>
+          return <IconButton disableRipple={disableRippleEffect} key={IconName} sx={styles}><Icon sx={{fontSize:iconSize}} /></IconButton>
         })
         
       }
