@@ -1,8 +1,9 @@
-import { Box, Breadcrumbs, Link, Typography, useTheme } from '@mui/material'
+import { Box, Breadcrumbs, Typography, useTheme } from '@mui/material'
 import React from 'react'
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import CustomContainer from '../customContainer/CustomContainer';
+import style from './CustomBreadcrumbs.module.css'
 
 const CustomBreadcrumbs = () => {
   const theme = useTheme();
@@ -19,7 +20,7 @@ const CustomBreadcrumbs = () => {
           {pages.map((page,index)=>{
             return (
               (pages.length!==1 && index!==pages.length-1 && 
-              <Link key={(page==='/'&& 'home') || page}  underline='hover' href={page}>
+              <Link className={style.bredcrumbLink} key={(page==='/'&& 'home') || page}  to={page}>
               {(page==='/' && 'Home') || page}
               </Link>)
             )
