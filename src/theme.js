@@ -13,6 +13,7 @@ const colors = {
   typeHighEmphasis: "#171520",
   typeLowEmphasis: "#626262",
   brown: "#97451F",
+  transparentBrown: "#97451F24",
   pink: "#A53F64",
   navy: "#17494D29",
 };
@@ -54,6 +55,9 @@ const theme = createTheme({
     },
     brown: {
       main: colors.brown,
+    },
+    transparentBrown: {
+      main: colors.transparentBrown,
     },
     pink: {
       main: colors.pink,
