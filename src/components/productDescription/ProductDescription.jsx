@@ -57,7 +57,7 @@ const ProductDescription = ({pName, pDesc, pRating, pPrice, pOldPrice, pSpecialO
             </Button>
             <Button variant="outlined" sx={{width:{xs:'50%', md:'240px'}, padding:"5px" , textTransform:'none' ,border:`2px solid ${theme.palette.primary.main}`, '&:hover':{backgroundColor:'rgb(53 58 61 / 14%)', border:`2px solid ${theme.palette.primary.main}`} , borderRadius:'8px'}}>
                 <IconBtn iconsNames={['FavoriteBorderOutlinedIcon']} iconJustifyContent={'center'} iconColor={theme.palette.primary.main} iconBackgroundColor={'transparent'} disableRippleEffect={true} iconPadding={'0'} ></IconBtn>
-                <Typography width='100%' fontWeight='600' fontSize='14px' lineHeight='normal' ml={{xs:0, md:1}} color={theme.palette.primary.main}>
+                <Typography width={{xs:'100%', md:'fit-content'}} fontWeight='600' fontSize='14px' lineHeight='normal' ml={{xs:0, md:1}} color={theme.palette.primary.main}>
                 Add To Wishlist
                 </Typography>
             </Button>
