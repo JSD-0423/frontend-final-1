@@ -1,9 +1,9 @@
-import { Grid, useTheme } from '@mui/material'
+import { useTheme } from '@mui/material'
 import React from 'react'
 import CardItem from '../cardItem/CardItem';
 import { Link } from 'react-router-dom';
 import AvailablePrices from '../availablePrices/AvailablePrices';
-import { Box, height, margin, width } from '@mui/system';
+import { Box} from '@mui/system';
 
 const ProductListing = () => {
     const theme = useTheme();
