@@ -13,6 +13,7 @@ export { default as NewArrivals } from './newArrivals/NewArrivals.jsx';
 export { default as CardsWrapper } from './cardsWrapper/CardsWrapper.jsx';
 export { default as CardsWrapperHeader } from './cardsWrapperHeader/CardsWrapperHeader.jsx';
 export { default as TitledImageCard } from './titledImageCard/TitledImageCard.jsx';
+export { default as ProductTabs } from './productTabs/ProductTabs.jsx';
 export { default as QuantityCounter } from './quantityCounter/QuantityCounter.jsx';
 export { default as ThumbsCarousel } from './thumbsCarousel/ThumbsCarousel.jsx';
 export { default as ImageCard } from './ImageCard/ImageCard.jsx';
@@ -21,4 +22,8 @@ export { default as HandPickedCollections } from './handPickedCollections/HandPi
 export { default as TopCategories } from './topCategories/TopCategories.jsx';
 export { default as FilterBasedCollection } from './filterBasedCollection/FilterBasedCollection.jsx';
 export { default as FilterBasedCard } from './filterBasedCard/FilterBasedCard.jsx';
+export { default as CustomContainer } from './customContainer/CustomContainer.jsx';
 export { default as CustomBreadcrumbs } from './customBreadcrumbs/CustomBreadcrumbs.jsx';
+export { default as CustomTabPanel } from './productTabs/CustomPanel.jsx';
+export { default as ProductDescription } from './productDescription/ProductDescription.jsx';
+export { default as ThumbCarousel } from'./thumbsCarousel/ThumbsCarousel.jsx';

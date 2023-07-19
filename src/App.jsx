@@ -1,9 +1,8 @@
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-
 import Layout from "./layout/Layout";
 import { Home } from "./pages";
-import Pdp from "./pages/Pdp";
+import ProductDetails from "./pages/ProductDetails";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -17,7 +16,7 @@ const App = () => {
         },
         {
           path:'/product-details',
-          element:<Pdp />
+          element:<ProductDetails />
         },
       ],
     },
