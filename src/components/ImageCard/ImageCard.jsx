@@ -20,8 +20,8 @@ const ImageCard = ({ image }) => {
         src={image}
         alt={image}
         sx={{
-          width: ["60px", "70px", "90px", "109px"],
-          height: ["25px", "35px", "46px"],
+          width: ["70px", "90px", "109px"],
+          height: "auto",
         }}
       />
     </Box>
