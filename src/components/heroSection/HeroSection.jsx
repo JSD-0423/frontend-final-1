@@ -73,7 +73,7 @@ const HeroSection = () => {
         sx={{
           width: "100%",
           boxSizing: "border-box",
-          marginBottom: "68px",
+          marginBottom: ["30px","45px","68px"],
           display: "flex",
         }}
       >

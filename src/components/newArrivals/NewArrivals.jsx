@@ -46,7 +46,7 @@ const NewArrivals = () => {
       />
       <Stack
         direction="row"
-        justifyContent="space-between"
+        justifyContent="flex-start"
         flexWrap="nowrap"
         spacing={{ xs: 2, md: 3 }}
         overflow="auto"

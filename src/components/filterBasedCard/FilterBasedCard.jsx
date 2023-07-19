@@ -20,7 +20,7 @@ const FilterBasedCard = ({ cardTitle, cardInfo, iconName }) => {
             <Typography
               invariant="p"
               color="#97451F"
-              fontSize={["18px","25px","30px"]}
+              fontSize={["18px", "25px", "30px"]}
               textTransform="uppercase"
             >
               {cardTitle}
@@ -51,7 +51,7 @@ const FilterBasedCard = ({ cardTitle, cardInfo, iconName }) => {
             pr={{ xs: "11px", md: "35px" }}
             pt={{ xs: "11px", md: "26px" }}
             pb={{ xs: "11px", md: "26px" }}
-            width={{ xs: "54%", md: "33%" }}
+            width={{ xs: "54%", md: "41%" }}
           >
             <Typography
               textAlign="center"
@@ -60,7 +60,7 @@ const FilterBasedCard = ({ cardTitle, cardInfo, iconName }) => {
               margin={{ xs: "0 0 19px 0", md: "0 0 21px 0" }}
               fontWeight={{ xs: "800", md: "700" }}
               lineHeight={{ xs: "16px", md: "52px" }}
-              fontSize={{ xs: "14px", md: "40px" }}
+              fontSize={["14px", "20px", "35px", "40px"]}
               color="#A53F64"
             >
               {cardInfo}
@@ -74,7 +74,7 @@ const FilterBasedCard = ({ cardTitle, cardInfo, iconName }) => {
               pseudoType={"&:hover"}
               pseudoIconId={"EastIcon"}
               pseudoBackgroundColor={theme.palette.grey.main}
-              style={{padding:["6px", "8px"]}}
+              style={{ padding: ["6px", "8px"] }}
             />
           </Stack>
         </Stack>
@@ -100,7 +100,7 @@ const FilterBasedCard = ({ cardTitle, cardInfo, iconName }) => {
               margin={{ xs: "0 0 19px 0", md: "0 0 21px 0" }}
               fontWeight={{ xs: "800", md: "700" }}
               lineHeight={{ xs: "16px", md: "52px" }}
-              fontSize={{ xs: "14px", md: "40px" }}
+              fontSize={["14px", "20px", "35px", "40px"]}
               color={theme.palette.primary.main}
             >
               {cardInfo}
@@ -114,7 +114,7 @@ const FilterBasedCard = ({ cardTitle, cardInfo, iconName }) => {
               pseudoType={"&:hover"}
               pseudoIconId={"EastIcon"}
               pseudoBackgroundColor={"#17494D29"}
-              style={{padding:["6px", "8px"]}}
+              style={{ padding: ["6px", "8px"] }}
             />
           </Stack>
         </Stack>

@@ -6,9 +6,7 @@ const TitledImageCard = ({ image, title }) => {
     <Box
       component="div"
       sx={{
-        backgroundImage: `url(${image})`,
-        backgroundSize: "100% 107%",
-        backgroundRepeat: "no-repeat",
+        background: `url(${image})  lightgray 50% / cover no-repeat`,
         width: ["170px", "280px"],
         height: ["152px", "282px"],
         borderRadius: "16px",
