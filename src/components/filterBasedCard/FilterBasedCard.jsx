@@ -19,7 +19,7 @@ const FilterBasedCard = ({ cardTitle, cardInfo, iconName }) => {
           <Stack direction="column" width={{ xs: "42%", md: "45%" }}>
             <Typography
               invariant="p"
-              color="#97451F"
+              color="brown.main"
               fontSize={["18px", "25px", "30px"]}
               textTransform="uppercase"
             >
@@ -32,7 +32,7 @@ const FilterBasedCard = ({ cardTitle, cardInfo, iconName }) => {
               margin={{ xs: "0 0 14.1px 0", md: "0 0 19px 0" }}
               fontSize={{ xs: "16px", md: "52px" }}
               lineHeight={{ xs: "20px", md: "68px" }}
-              color="#97451F"
+              color="brown.main"
             >
               {cardInfo}
             </Typography>
@@ -61,13 +61,13 @@ const FilterBasedCard = ({ cardTitle, cardInfo, iconName }) => {
               fontWeight={{ xs: "800", md: "700" }}
               lineHeight={{ xs: "16px", md: "52px" }}
               fontSize={["14px", "20px", "35px", "40px"]}
-              color="#A53F64"
+              color="pink.main"
             >
               {cardInfo}
             </Typography>
             <IconBtn
               iconsNames={iconName}
-              iconColor={"#A53F64"}
+              iconColor={"pink.main"}
               iconJustifyContent={"flex-end"}
               iconSize={{ xs: "20px", md: "30px" }}
               iconBackgroundColor={theme.palette.grey.main}
@@ -110,10 +110,10 @@ const FilterBasedCard = ({ cardTitle, cardInfo, iconName }) => {
               iconColor={theme.palette.primary.main}
               iconJustifyContent={"flex-end"}
               iconSize={{ xs: "20px", md: "30px" }}
-              iconBackgroundColor={"#17494D29"}
+              iconBackgroundColor={"navy.main"}
               pseudoType={"&:hover"}
               pseudoIconId={"EastIcon"}
-              pseudoBackgroundColor={"#17494D29"}
+              pseudoBackgroundColor={"navy.main"}
               style={{ padding: ["6px", "8px"] }}
             />
           </Stack>
