@@ -6,6 +6,7 @@ import { TextButton, Carousel } from "../index.js";
 import HeroSectionImage1 from "../../assets/heroSection1.png";
 import HeroSectionImage2 from "../../assets/heroSection2.svg";
 import CustomContainer from "../customContainer/CustomContainer.jsx";
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   const images = [
@@ -20,7 +21,7 @@ const HeroSection = () => {
             gap: ["1px", "4px", "15px"],
             position: "absolute",
             right: "0px",
-            width: ["218px", "450px", "710px"],
+            width: ["218px", "450px", "697px"],
             top: ["12px", "26px", "50px"],
             height: ["116px", "214px", "316px"],
             backgroundColor: "rgba(222, 222, 222, 0.7)",
@@ -50,11 +51,13 @@ const HeroSection = () => {
           >
             Trendy handbags collection for your party animal
           </Typography>
-          <TextButton
-            text="See more"
-            icon={<ArrowForwardIcon />}
-            style={{ alignSelf: "flex-start", marginTop: "20px" }}
-          />
+          <Link to="/product-details">
+            <TextButton
+              text="See more"
+              icon={<ArrowForwardIcon />}
+              style={{ alignSelf: "flex-start", marginTop: "20px" }}
+            />
+          </Link>
         </Box>
       ),
     },
@@ -70,7 +73,7 @@ const HeroSection = () => {
         sx={{
           width: "100%",
           boxSizing: "border-box",
-          marginBottom:"68px",
+          marginBottom: ["30px","45px","68px"],
           display: "flex",
         }}
       >

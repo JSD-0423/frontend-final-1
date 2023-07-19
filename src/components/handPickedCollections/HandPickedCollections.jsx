@@ -48,7 +48,7 @@ const HandPickedCollections = () => {
       <Stack
         direction="row"
         flexWrap="wrap"
-        gap={["16px", "47px"]}
+        gap={["26px","40px","60px", "40px"]}
         marginTop="24px"
         paddingBottom="42px"
       >
