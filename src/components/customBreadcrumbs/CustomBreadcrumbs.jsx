@@ -1,33 +1,33 @@
 import { Box, Breadcrumbs, Typography, useTheme } from '@mui/material'
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import CustomContainer from '../customContainer/CustomContainer';
 import style from './CustomBreadcrumbs.module.css'
+import { BreadCrumbsContext } from '../../context/BreadCrumbsContext';
 
 const CustomBreadcrumbs = () => {
   const theme = useTheme();
   const location = useLocation();
-  const [pagesState, setPagesState] = useState(['/']);
-  
+  const {pagesState, setPagesState} = useContext (BreadCrumbsContext);
+
+
   const handleLinkClick = (page) => {
     const pageIndex = pagesState.indexOf(page);
     setPagesState(pagesState.slice(0, pageIndex + 1));
   };
 
   useEffect(()=>{
-    const crumbs = location.pathname.split('/').filter(crumb => crumb);
-
-    if(!pagesState.includes(crumbs[0])) {
-      const newPagesState = [...pagesState, crumbs[0]];
-      setPagesState(newPagesState);
+    let crumbs = location.pathname.split('/').filter(crumb => crumb);
+    if(!pagesState.includes(crumbs[0]) && crumbs.length >= 1) {
+      setPagesState([...pagesState, crumbs[0]]);
     }
-
+  
   },[location])
   
   return (
     <CustomContainer>
-      <Box mb={{xs:1, md:5}} display={(pagesState.length!==1 && 'block') || 'none'}>
+      <Box component='div' mb={{xs:1, md:5}} display={pagesState.length > 1 ? 'block' : 'none'}>
         <Breadcrumbs separator={<ChevronRightIcon sx={{color:theme.palette.dark.main}} />} aria-label='breadcrumb'>
           {pagesState.map((page,index)=>{
             return (

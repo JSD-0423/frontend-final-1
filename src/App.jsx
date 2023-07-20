@@ -4,6 +4,7 @@ import Layout from "./layout/Layout";
 import { Home, ProductDetails, Category } from "./pages";
 
 const App = () => {
+
   const router = createBrowserRouter([
     {
       path: "/",
