@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/frontend-final-1/static/css/main.15a44be3.css",
+    "main.js": "/frontend-final-1/static/js/main.343c7cad.js",
+    "static/media/heroSection2.svg": "/frontend-final-1/static/media/heroSection2.b0a0cbf99609a3999c90257df23ffe6c.svg",
+    "static/media/heroSection1.png": "/frontend-final-1/static/media/heroSection1.d19c64c78b6d6fd8f42f.png",
+    "static/media/watchCoolection3.png": "/frontend-final-1/static/media/watchCoolection3.d161e0e3c56f09b3835a.png",
+    "static/media/bagsCollection2.png": "/frontend-final-1/static/media/bagsCollection2.d54791b8b2126118cdb7.png",
+    "static/media/perfumeCollections1.png": "/frontend-final-1/static/media/perfumeCollections1.e7abc4706cde09d0f881.png",
+    "static/media/glassesCollection4.png": "/frontend-final-1/static/media/glassesCollection4.1154beebc9ad49145f67.png",
+    "index.html": "/frontend-final-1/index.html",
+    "main.15a44be3.css.map": "/frontend-final-1/static/css/main.15a44be3.css.map",
+    "main.343c7cad.js.map": "/frontend-final-1/static/js/main.343c7cad.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.15a44be3.css",
+    "static/js/main.343c7cad.js"
+  ]
+}
