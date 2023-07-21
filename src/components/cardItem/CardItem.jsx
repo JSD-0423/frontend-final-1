@@ -1,6 +1,6 @@
 import { Box, Stack, Typography, useTheme } from "@mui/material";
 import React from "react";
-import IconBtn from "../iconBtn/IconBtn";
+import { IconBtn } from "../index.js";
 
 const CardItem = ({
   cardWidth,
@@ -71,13 +71,15 @@ const CardItem = ({
         </Box>
         <Box>
           <IconBtn
-            iconsNames={icons}
+            Icon={icons}
             pseudoIconId={cardItemPseudoIconId}
-            iconSize={{ xs: "18px", md: "25px" }}
-            iconColor={theme.palette.dark.main}
-            iconPadding={0}
+            btnStyle={{
+              color: `${theme.palette.dark.main}`,
+              padding: "0",
+            }}
+            iconStyle={{ fontSize: ["18px", "25px"] }}
             pseudoType={"&:hover"}
-            pseudoBackgroundColor={"transparent"}
+            pseudoStyle={{ backgroundColor: "transparent" }}
           />
         </Box>
       </Stack>
