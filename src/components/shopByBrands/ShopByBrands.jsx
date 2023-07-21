@@ -9,6 +9,7 @@ import Prada from "../../assets/PradaBrand.png";
 import Biba from "../../assets/BibaBrand.png";
 import { useTheme } from "@mui/system";
 import { Box, useMediaQuery } from "@mui/material";
+import NavigateNextOutlinedIcon from "@mui/icons-material/NavigateNextOutlined";
 
 const ShopByBrands = () => {
   const theme = useTheme();
@@ -28,8 +29,8 @@ const ShopByBrands = () => {
       <CardsWrapperHeader
         wrapperTitle="Shop by Brands"
         fontColor={theme.palette.dark.main}
-        WrapperGoToIcon={["NavigateNextOutlinedIcon"]}
-        WrapperPseudoIconId={"NavigateNextOutlinedIcon"}
+        WrapperGoToIcon={NavigateNextOutlinedIcon}
+        WrapperPseudoIconId={NavigateNextOutlinedIcon}
         showBtnOnAllSizes={isSmallScreen}
       />
       <Box

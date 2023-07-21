@@ -1,7 +1,7 @@
 import { Box, Stack, Typography, useTheme } from "@mui/material";
 import React from "react";
 import { Link } from "react-router-dom";
-import IconBtn from "../iconBtn/IconBtn";
+import { IconBtn } from "../index.js";
 
 const CardsWrapperHeader = ({
   wrapperTitle,
@@ -31,7 +31,7 @@ const CardsWrapperHeader = ({
       </Typography>
       <Box>
         {WrapperGoToIcon && WrapperPseudoIconId && showBtnOnAllSizes && (
-          <Link to="/product-details" style={{textDecoration: "none" }}>
+          <Link to="/product-details" style={{ textDecoration: "none" }}>
             <Stack direction="row" alignItems="center">
               <Typography
                 whiteSpace="nowrap"
@@ -45,13 +45,15 @@ const CardsWrapperHeader = ({
                 View All
               </Typography>
               <IconBtn
-                iconsNames={WrapperGoToIcon}
+                Icon={WrapperGoToIcon}
                 pseudoIconId={WrapperPseudoIconId}
-                iconPadding={0}
-                iconSize={{ xs: "20px", md: "30px" }}
-                iconColor={{ xs: theme.palette.primary.main, md: fontColor }}
+                btnStyle={{
+                  padding: "0",
+                  color: [`${theme.palette.primary.main}`, fontColor],
+                }}
+                iconStyle={{ fontSize: ["20px", "30px"] }}
                 pseudoType={"&:hover"}
-                pseudoBackgroundColor="transparent"
+                pseudoStyle={{ backgroundColor: "transparent" }}
               />
             </Stack>
           </Link>

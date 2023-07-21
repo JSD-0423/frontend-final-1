@@ -12,7 +12,7 @@ import SegmentOutlinedIcon from "@mui/icons-material/SegmentOutlined";
 import logo from "../../assets/logo.jpg";
 import { Link } from "react-router-dom";
 
-const Header = () => {
+const Header = ({ togglePopup }) => {
   const theme = useTheme();
   return (
     <AppBar
@@ -47,7 +47,7 @@ const Header = () => {
               />
             </Box>
           </IconButton>
-          <Navbar />
+          <Navbar togglePopup={togglePopup} />
         </Stack>
       </Toolbar>
     </AppBar>

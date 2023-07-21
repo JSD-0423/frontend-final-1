@@ -2,6 +2,8 @@ import React from "react";
 import { Stack, useTheme } from "@mui/material";
 import { Link } from "react-router-dom";
 import { CardItem, CardsWrapperHeader, CardsWrapper } from "../index.js";
+import NavigateNextOutlinedIcon from "@mui/icons-material/NavigateNextOutlined";
+import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 
 const NewArrivals = () => {
   const theme = useTheme();
@@ -40,8 +42,8 @@ const NewArrivals = () => {
       <CardsWrapperHeader
         wrapperTitle={"New Arrivals"}
         fontColor={theme.palette.dark.main}
-        WrapperGoToIcon={["NavigateNextOutlinedIcon"]}
-        WrapperPseudoIconId={"NavigateNextOutlinedIcon"}
+        WrapperGoToIcon={NavigateNextOutlinedIcon}
+        WrapperPseudoIconId={NavigateNextOutlinedIcon}
         showBtnOnAllSizes={true}
       />
       <Stack
@@ -68,8 +70,8 @@ const NewArrivals = () => {
                 productName={card.productName}
                 productType={card.productType}
                 price={card.price}
-                icons={["FavoriteBorderOutlinedIcon"]}
-                cardItemPseudoIconId={"FavoriteBorderOutlinedIcon"}
+                icons={FavoriteBorderOutlinedIcon}
+                cardItemPseudoIconId={FavoriteBorderOutlinedIcon}
                 image={card.image}
                 fontColor={theme.palette.typeHighEmphasis.main}
               />
