@@ -75,9 +75,9 @@ const FilterBasedCard = ({ cardInfo, iconName }) => {
               btnStyle={{
                 color: `${theme.palette.pink.main}`,
                 backgroundColor: `${theme.palette.grey.main}`,
-                justifyContent: "flex-end",
                 padding: ["6px", "8px"],
               }}
+              elementStyle={{ justifyContent: "flex-end" }}
               iconStyle={{ fontSize: ["20px", "30px"] }}
               pseudoType={"&:hover"}
               pseudoIconId={iconName}
@@ -118,8 +118,8 @@ const FilterBasedCard = ({ cardInfo, iconName }) => {
                 padding: ["6px", "8px"],
                 color: `${theme.palette.primary.main}`,
                 backgroundColor: `${theme.palette.navy.main}`,
-                justifyContent: "flex-end",
               }}
+              elementStyle={{ justifyContent: "flex-end" }}
               iconStyle={{ fontSize: ["20px", "30px"] }}
               pseudoType={"&:hover"}
               pseudoIconId={iconName}
