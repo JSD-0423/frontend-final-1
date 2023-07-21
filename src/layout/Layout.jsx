@@ -3,10 +3,10 @@ import { Outlet } from "react-router-dom";
 import { Footer, Header, CustomBreadcrumbs, CartPopup } from "../components";
 
 const Layout = () => {
-  const [isPopupVisible, setIsPopupVisible] = useState(true);
+  const [isPopupVisible, setIsPopupVisible] = useState(false);
 
   const togglePopup = () => {
-    setIsPopupVisible((prevState) => !prevState);
+    setIsPopupVisible(true);
   };
 
   const hidePopup = () => {
