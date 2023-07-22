@@ -1,31 +1,44 @@
-import { Box, Breadcrumbs, Link, Typography, useTheme } from '@mui/material'
-import React from 'react'
-import { useLocation } from 'react-router-dom';
+import { Box, Breadcrumbs, Typography, useTheme } from '@mui/material'
+import React, { useContext, useEffect } from 'react'
+import { Link, useLocation } from 'react-router-dom';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import CustomContainer from '../customContainer/CustomContainer';
+import style from './CustomBreadcrumbs.module.css'
+import { BreadCrumbsContext } from '../../context/BreadCrumbsContext';
 
 const CustomBreadcrumbs = () => {
   const theme = useTheme();
   const location = useLocation();
-  let pages =['/'];
-  const crumbs = location.pathname.split('/').filter(crumb => crumb); 
-  crumbs.forEach((crumb)=>{
-    pages.push(crumb);
-  })
+  const {pagesState, setPagesState} = useContext (BreadCrumbsContext);
+
+
+  const handleLinkClick = (page) => {
+    const pageIndex = pagesState.indexOf(page);
+    setPagesState(pagesState.slice(0, pageIndex + 1));
+  };
+
+  useEffect(()=>{
+    let crumbs = location.pathname.split('/').filter(crumb => crumb);
+    if(!pagesState.includes(crumbs[0]) && crumbs.length >= 1) {
+      setPagesState([...pagesState, crumbs[0]]);
+    }
+  
+  },[location])
+  
   return (
     <CustomContainer>
-      <Box mb={{xs:1, md:5}} display={(pages.length!==1 && 'block') || 'none'}>
+      <Box component='div' mb={{xs:1, md:5}} display={pagesState.length > 1 ? 'block' : 'none'}>
         <Breadcrumbs separator={<ChevronRightIcon sx={{color:theme.palette.dark.main}} />} aria-label='breadcrumb'>
-          {pages.map((page,index)=>{
+          {pagesState.map((page,index)=>{
             return (
-              (pages.length!==1 && index!==pages.length-1 && 
-              <Link key={(page==='/'&& 'home') || page}  underline='hover' href={page}>
+              (pagesState.length!==1 && index!==pagesState.length-1 && 
+              <Link onClick={()=>{handleLinkClick(page)}} className={style.bredcrumbLink} key={(page==='/'&& 'home') || page}  to={page}>
               {(page==='/' && 'Home') || page}
               </Link>)
             )
           })}
           <Typography color={theme.palette.dark.main}>
-            {(pages[pages.length-1]==='/' && '') || pages[pages.length-1]}
+            {pagesState[pagesState.length-1]}
           </Typography>
         </Breadcrumbs>
       </Box>
@@ -34,3 +47,8 @@ const CustomBreadcrumbs = () => {
 }
 
 export default CustomBreadcrumbs
+
+
+
+
+

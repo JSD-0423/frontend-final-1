@@ -1,4 +1,4 @@
-import { Box, Stack, Typography, useTheme } from "@mui/material";
+import { Box, Rating, Stack, Typography, useTheme } from "@mui/material";
 import React from "react";
 import IconBtn from "../iconBtn/IconBtn";
 
@@ -11,16 +11,20 @@ const CardItem = ({
   productName,
   productType,
   price,
+  prices,
   icons,
   cardItemPseudoIconId,
   image,
   fontColor,
+  ratingStars,
+  pRating,
+  location,
 }) => {
   const theme = useTheme();
 
   return (
-    <Box component="div" width={cardWidth} flexShrink={0}>
-      <Box component="div" width={imageWidth} height={imageHeight} mb={1}>
+    <Box width={cardWidth}  flexShrink={0}>
+      <Box width={imageWidth} height={imageHeight} mb={1}>
         <img
           style={{
             width: "100%",
@@ -57,6 +61,8 @@ const CardItem = ({
           >
             {productType}
           </Typography>
+          {ratingStars && <Stack mb={1} direction='row' alignItems='center' flexWrap='nowrap' spacing={1}><Rating size="small" name="read-only" value={pRating} readOnly /><Typography variant="body1" fontSize={{xs:'8.5px', md:'14px'}} fontWeight='500' color={theme.palette.primary.main}>43 Ratings</Typography></Stack> }
+          {location === 'category-page' && prices || 
           <Typography
             variant="body1"
             noWrap
@@ -67,7 +73,7 @@ const CardItem = ({
             gutterBottom
           >
             {price}
-          </Typography>
+          </Typography>}
         </Box>
         <Box>
           <IconBtn

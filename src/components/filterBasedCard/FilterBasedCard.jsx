@@ -75,7 +75,7 @@ const FilterBasedCard = ({ cardInfo, iconName }) => {
               pseudoType={"&:hover"}
               pseudoIconId={"EastIcon"}
               pseudoBackgroundColor={theme.palette.grey.main}
-              style={{ padding: ["6px", "8px"] }}
+              iconPadding={['6px' , '8px']}
             />
           </Stack>
         </Stack>
@@ -115,7 +115,7 @@ const FilterBasedCard = ({ cardInfo, iconName }) => {
               pseudoType={"&:hover"}
               pseudoIconId={"EastIcon"}
               pseudoBackgroundColor={"navy.main"}
-              style={{ padding: ["6px", "8px"] }}
+              iconPadding={['6px' , '8px']}
             />
           </Stack>
         </Stack>

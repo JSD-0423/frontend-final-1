@@ -45,7 +45,6 @@ const IconBtn = ({
   pseudoBorderRadius,
   pseudoBackgroundColor,
   pseudoZIndex,
-  style,
 }) => {
   return (
     <Stack
@@ -63,7 +62,6 @@ const IconBtn = ({
           margin: iconMargin,
           fontSize: iconSize,
           backgroundColor: iconBackgroundColor,
-          ...style
         };
         if (pseudoIconId === IconName) {
           styles[pseudoType] = {

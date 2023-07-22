@@ -27,3 +27,4 @@ export { default as CustomBreadcrumbs } from './customBreadcrumbs/CustomBreadcru
 export { default as CustomTabPanel } from './productTabs/CustomPanel.jsx';
 export { default as ProductDescription } from './productDescription/ProductDescription.jsx';
 export { default as ThumbCarousel } from './thumbsCarousel/ThumbsCarousel.jsx';
+export { default as ProductListing } from './productListing/ProductListing.jsx';
