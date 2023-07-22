@@ -11,6 +11,7 @@ import collection1 from "../../assets/perfumeCollections1.png";
 import collection2 from "../../assets/bagsCollection2.png";
 import collection3 from "../../assets/watchCoolection3.png";
 import collection4 from "../../assets/glassesCollection4.png";
+import { Link } from "react-router-dom";
 
 const HandPickedCollections = () => {
   const theme = useTheme();
@@ -53,11 +54,12 @@ const HandPickedCollections = () => {
         paddingBottom="42px"
       >
         {CardItemsObj.map((ele) => (
-          <TitledImageCard
-            image={ele.image}
-            title={ele.productName}
-            key={ele.id}
-          />
+          <Link key={ele.id} style={{ textDecoration: "none" }} to='/category'>
+            <TitledImageCard
+              image={ele.image}
+              title={ele.productName}
+            />
+          </Link>
         ))}
       </Stack>
     </CardsWrapper>

@@ -6,14 +6,16 @@ import {
   Toolbar,
   useTheme,
 } from "@mui/material";
-import React from "react";
+import React, { useContext } from "react";
 import { Navbar } from "../index.js";
 import SegmentOutlinedIcon from "@mui/icons-material/SegmentOutlined";
 import logo from "../../assets/logo.jpg";
 import { Link } from "react-router-dom";
+import { BreadCrumbsContext } from "../../context/BreadCrumbsContext.js";
 
 const Header = ({ togglePopup }) => {
   const theme = useTheme();
+  const {setPagesState} = useContext (BreadCrumbsContext);
   return (
     <AppBar
       position="sticky"
@@ -26,7 +28,7 @@ const Header = ({ togglePopup }) => {
           width="100%"
           spacing={{ xs: 0, md: 4 }}
         >
-          <IconButton
+          <IconButton onClick={()=> setPagesState(['/'])}
             sx={{ display: { xs: "none", md: "block" }, paddingLeft: "0px" }}
           >
             <Link underline="none" to="/">

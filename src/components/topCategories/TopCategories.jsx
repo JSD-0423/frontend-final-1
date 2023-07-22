@@ -37,7 +37,7 @@ const TopCategories = () => {
           Top Categories
         </Typography>
       </Box>
-      <Stack direction="row" justifyContent="flex-start" spacing={3}>
+      <Stack direction="row" justifyContent="space-between" spacing={3}>
         {topCategoriesObj.map((collection) => {
           return (
             <CollectionCard
