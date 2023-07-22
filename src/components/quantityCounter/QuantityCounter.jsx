@@ -25,9 +25,6 @@ const QuantityCounter = () => {
         padding: "1px",
       }}
     >
-      <Typography fontWeight='600' fontSize='20px' lineHeight='26px' color={theme.palette.dark.main} mr={1}>
-        Quantity:
-      </Typography>
       <Stack direction='row' border={`1px solid ${theme.palette.primary.main}`} borderRadius="4px">
         <Button onClick={handleDecrement} sx={{ minWidth: "0", padding: "4px" }}>
           <RemoveIcon sx={{ fontSize: "18px", color: "black" }} />

@@ -3,8 +3,14 @@ import React from "react";
 import { Box, Stack, Typography } from "@mui/material";
 import { SearchInput, IconBtn } from "../index.js";
 import { useTheme } from "@emotion/react";
+import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
+import LocalMallOutlinedIcon from "@mui/icons-material/LocalMallOutlined";
+import PermIdentityOutlinedIcon from "@mui/icons-material/PermIdentityOutlined";
+import LocalHospitalOutlinedIcon from "@mui/icons-material/LocalHospitalOutlined";
+import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
+import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 
-const Navbar = () => {
+const Navbar = ({ togglePopup }) => {
   const theme = useTheme();
 
   const collections = [
@@ -15,6 +21,23 @@ const Navbar = () => {
     "Apparels",
   ];
 
+  const desktopIcons = [
+    {
+      icon: FavoriteBorderOutlinedIcon,
+      functionality: () => console.log("Favorites "),
+    },
+    {
+      icon: PermIdentityOutlinedIcon,
+      functionality: () => console.log("profile "),
+    },
+    { icon: LocalMallOutlinedIcon, functionality: togglePopup },
+  ];
+
+  const mobileIcons = [
+    LocalHospitalOutlinedIcon,
+    NotificationsNoneOutlinedIcon,
+    SearchOutlinedIcon,
+  ];
   return (
     <Stack
       direction="row"
@@ -76,38 +99,47 @@ const Navbar = () => {
             searchInputHeight={"44px"}
           />
         </Box>
-        <Box display={{ xs: "none", md: "block" }} component="div">
-          <IconBtn
-            iconsNames={[
-              "FavoriteBorderOutlinedIcon",
-              "PermIdentityOutlinedIcon",
-              "LocalMallOutlinedIcon",
-            ]}
-            iconColor={theme.palette.primary.main}
-            iconPosition={"relative"}
-            pseudoIconId={"LocalMallOutlinedIcon"}
-            pseudoType={"&::after"}
-            pseudoContent={"''"}
-            pseudoPosition={"absolute"}
-            pseudoTopPos={"7px"}
-            pseudoRightPos={"8px"}
-            pseudoWidth={"7px"}
-            pseudoHeight={"7px"}
-            pseudoBorder={"2px solid white"}
-            pseudoBorderRadius={"50%"}
-            pseudoBackgroundColor={"orange"}
-            pseudoZIndex={1}
-          />
+        <Box display={{ xs: "none", md: "flex" }} component="div">
+          {desktopIcons.map(({ icon, functionality }, index) => {
+            return (
+              <IconBtn
+                key={index}
+                Icon={icon}
+                handleClick={functionality}
+                btnStyle={{
+                  color: `${theme.palette.primary.main}`,
+                  position: "relative",
+                }}
+                pseudoIconId={LocalMallOutlinedIcon}
+                pseudoType={"&::after"}
+                pseudoStyle={{
+                  content: "''",
+                  position: "absolute",
+                  top: "7px",
+                  right: "8px",
+                  width: "7px",
+                  height: "7px",
+                  border: "2px solid white",
+                  borderRadius: "50%",
+                  backgroundColor: "orange",
+                  zIndex: 1,
+                }}
+              />
+            );
+          })}
         </Box>
-        <Box display={{ xs: "block", md: "none" }} component="div">
-          <IconBtn
-            iconsNames={[
-              "LocalHospitalOutlinedIcon",
-              "SearchOutlinedIcon",
-              "NotificationsNoneOutlinedIcon",
-            ]}
-            iconColor={theme.palette.primary.main}
-          />
+        <Box display={{ xs: "flex", md: "none" }} component="div">
+          {mobileIcons.map((icon, index) => {
+            return (
+              <IconBtn
+                key={index}
+                Icon={icon}
+                btnStyle={{
+                  color: `${theme.palette.primary.main}`,
+                }}
+              />
+            );
+          })}
         </Box>
       </Stack>
     </Stack>

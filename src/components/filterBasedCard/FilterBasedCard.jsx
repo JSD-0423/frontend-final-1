@@ -1,6 +1,6 @@
 import { Stack, Typography, useTheme } from "@mui/material";
 import React from "react";
-import IconBtn from "../iconBtn/IconBtn";
+import { IconBtn } from "../index.js";
 
 const FilterBasedCard = ({ cardInfo, iconName }) => {
   const theme = useTheme();
@@ -29,13 +29,17 @@ const FilterBasedCard = ({ cardInfo, iconName }) => {
               {cardInfo}
             </Typography>
             <IconBtn
-              iconsNames={iconName}
-              iconColor={"brown.main"}
-              iconSize={{ xs: "20px", md: "30px" }}
-              iconBackgroundColor={"transparentBrown.main"}
+              Icon={iconName}
+              btnStyle={{
+                color: `${theme.palette.brown.main}`,
+                backgroundColor: `${theme.palette.transparentBrown.main}`,
+              }}
+              iconStyle={{ fontSize: ["20px", "30px"] }}
               pseudoType={"&:hover"}
-              pseudoIconId={"EastIcon"}
-              pseudoBackgroundColor={"transparentBrown.main"}
+              pseudoIconId={iconName}
+              pseudoStyle={{
+                backgroundColor: `${theme.palette.transparentBrown.main}`,
+              }}
             />
           </Stack>
         </Stack>
@@ -67,15 +71,17 @@ const FilterBasedCard = ({ cardInfo, iconName }) => {
               {cardInfo}
             </Typography>
             <IconBtn
-              iconsNames={iconName}
-              iconColor={"pink.main"}
-              iconJustifyContent={"flex-end"}
-              iconSize={{ xs: "20px", md: "30px" }}
-              iconBackgroundColor={theme.palette.grey.main}
+              Icon={iconName}
+              btnStyle={{
+                color: `${theme.palette.pink.main}`,
+                backgroundColor: `${theme.palette.grey.main}`,
+                padding: ["6px", "8px"],
+              }}
+              elementStyle={{ justifyContent: "flex-end" }}
+              iconStyle={{ fontSize: ["20px", "30px"] }}
               pseudoType={"&:hover"}
-              pseudoIconId={"EastIcon"}
-              pseudoBackgroundColor={theme.palette.grey.main}
-              iconPadding={['6px' , '8px']}
+              pseudoIconId={iconName}
+              pseudoStyle={{ backgroundColor: `${theme.palette.grey.main}` }}
             />
           </Stack>
         </Stack>
@@ -107,15 +113,17 @@ const FilterBasedCard = ({ cardInfo, iconName }) => {
               {cardInfo}
             </Typography>
             <IconBtn
-              iconsNames={iconName}
-              iconColor={theme.palette.primary.main}
-              iconJustifyContent={"flex-end"}
-              iconSize={{ xs: "20px", md: "30px" }}
-              iconBackgroundColor={"navy.main"}
+              Icon={iconName}
+              btnStyle={{
+                padding: ["6px", "8px"],
+                color: `${theme.palette.primary.main}`,
+                backgroundColor: `${theme.palette.navy.main}`,
+              }}
+              elementStyle={{ justifyContent: "flex-end" }}
+              iconStyle={{ fontSize: ["20px", "30px"] }}
               pseudoType={"&:hover"}
-              pseudoIconId={"EastIcon"}
-              pseudoBackgroundColor={"navy.main"}
-              iconPadding={['6px' , '8px']}
+              pseudoIconId={iconName}
+              pseudoStyle={{ backgroundColor: `${theme.palette.navy.main}` }}
             />
           </Stack>
         </Stack>

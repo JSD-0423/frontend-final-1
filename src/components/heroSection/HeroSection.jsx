@@ -25,6 +25,7 @@ const HeroSection = () => {
             top: ["12px", "26px", "50px"],
             height: ["116px", "214px", "316px"],
             backgroundColor: "rgba(222, 222, 222, 0.7)",
+            backdropFilter: 'blur(2px)',
             borderRadius: "15px 0px 0px 15px",
             paddingLeft: ["11px", "25px", "47px"],
             paddingTop: ["7px", "8px", "25px"],
@@ -73,7 +74,7 @@ const HeroSection = () => {
         sx={{
           width: "100%",
           boxSizing: "border-box",
-          marginBottom: ["30px","45px","68px"],
+          marginBottom: ["30px", "45px", "68px"],
           display: "flex",
         }}
       >
