@@ -2,9 +2,15 @@ import React from "react";
 import { Box, useTheme } from "@mui/material";
 import { FilterBasedCard, CardsWrapper } from "../index.js";
 import EastIcon from "@mui/icons-material/East";
+import { useNavigate } from "react-router-dom";
 
 const FilterBasedCollection = () => {
   const theme = useTheme();
+  const navigate = useNavigate();
+
+  const handleBoxClick = () => {
+    navigate(`/category`);
+  };
 
   const filterCardsCollection = [
     {
@@ -44,6 +50,7 @@ const FilterBasedCollection = () => {
           return (
             <Box
               key={card.cardId}
+              onClick={()=>{handleBoxClick()}}
               height={{
                 xs: (card.cardId === 1 && "132px") || "100px",
                 md: (card.cardId === 1 && "400px") || "228px",
@@ -61,6 +68,7 @@ const FilterBasedCollection = () => {
                 },
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "100% 100%",
+                cursor:'pointer'
               }}
             >
               <FilterBasedCard

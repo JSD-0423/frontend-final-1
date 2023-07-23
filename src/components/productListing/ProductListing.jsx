@@ -4,6 +4,7 @@ import CardItem from '../cardItem/CardItem';
 import { Link } from 'react-router-dom';
 import AvailablePrices from '../availablePrices/AvailablePrices';
 import { Box} from '@mui/system';
+import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 
 const ProductListing = () => {
     const theme = useTheme();
@@ -108,8 +109,8 @@ const ProductListing = () => {
                                 productName={card.productName}
                                 productType={card.productType}
                                 prices={<AvailablePrices pPrice={card.price} pOldPrice={'$78.66'} pSpecialOffer={'50%OFF'} fontStyles={PricesStylesObj} location={'category-page'} />}
-                                icons={["FavoriteBorderOutlinedIcon"]}
-                                cardItemPseudoIconId={"FavoriteBorderOutlinedIcon"}
+                                icons={FavoriteBorderOutlinedIcon}
+                                cardItemPseudoIconId={FavoriteBorderOutlinedIcon}
                                 image={card.image}
                                 fontColor={theme.palette.typeHighEmphasis.main}
                                 ratingStars={true}
