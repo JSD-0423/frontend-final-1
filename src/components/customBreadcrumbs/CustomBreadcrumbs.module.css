@@ -3,7 +3,7 @@
 }
 
 .bredcrumbLink:visited{
-    color: #1B4B66;
+    color:var(--primary);
 }
 
 .bredcrumbLink:hover{

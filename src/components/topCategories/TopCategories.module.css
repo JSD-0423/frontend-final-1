@@ -1,9 +1,9 @@
 .categories{
     text-decoration: none;
-    color: #13101E;
+    color: var(--dark);
 }
 
 .categories:visited{
-    color: #13101E;
+    color:var(--dark);
 }
 

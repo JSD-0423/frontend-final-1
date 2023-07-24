@@ -50,7 +50,7 @@ const FilterBasedCollection = () => {
           return (
             <Box
               key={card.cardId}
-              onClick={()=>{handleBoxClick()}}
+              onClick={handleBoxClick}
               height={{
                 xs: (card.cardId === 1 && "132px") || "100px",
                 md: (card.cardId === 1 && "400px") || "228px",

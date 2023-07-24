@@ -4,7 +4,7 @@ import { Accordion, AccordionDetails, AccordionSummary, Button, TextField, Typog
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { Box, Stack } from '@mui/system'
 import { Link } from 'react-router-dom';
-import {ChekcoutProduct} from '../components'
+import {CheckoutProduct} from '../components'
 
 const Checkout = () => {
     const theme = useTheme();
@@ -75,8 +75,8 @@ const Checkout = () => {
                     </Typography>
                 </Box>
                 <Stack direction='column' gap={3} mb={[0,'17px']}>
-                    <ChekcoutProduct src={'https://images2.imgbox.com/10/33/1ecsOzts_o.png'} styles={checkoutPTextStyles} pName={'Coach'} pDetails={'Leather Coach Bag'} pQuantity={"QTy-1"} />
-                    <ChekcoutProduct src={'https://images2.imgbox.com/10/33/1ecsOzts_o.png'} styles={checkoutPTextStyles} pName={'Coach'} pDetails={'Leather Coach Bag'} pQuantity={"QTy-1"} />
+                    <CheckoutProduct src={'https://images2.imgbox.com/10/33/1ecsOzts_o.png'} styles={checkoutPTextStyles} pName={'Coach'} pDetails={'Leather Coach Bag'} pQuantity={"QTy-1"} />
+                    <CheckoutProduct src={'https://images2.imgbox.com/10/33/1ecsOzts_o.png'} styles={checkoutPTextStyles} pName={'Coach'} pDetails={'Leather Coach Bag'} pQuantity={"QTy-1"} />
                 </Stack>
                 <Box borderBottom='1px solid #0000001F'>
                     <Typography mb={1} variant='h2' fontWeight='600' fontSize='20px' color='dark.main'>

@@ -1,8 +1,8 @@
 .navbarList{
     text-decoration: none;
-    color: #13101E;
+    color: var(--dark);
 }
 
 .navbarList:visited{
-    color: #1B4B66;
+    color:var(--primary);
 }
