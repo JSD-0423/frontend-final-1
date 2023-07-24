@@ -2,6 +2,8 @@ import React from "react";
 import CardsWrapper from "../cardsWrapper/CardsWrapper";
 import { Box, Stack, Typography } from "@mui/material";
 import CollectionCard from "../collectionCard/CollectionCard";
+import { Link } from "react-router-dom";
+import style from './TopCategories.module.css'
 
 const TopCategories = () => {
   const topCategoriesObj = [
@@ -40,17 +42,18 @@ const TopCategories = () => {
       <Stack direction="row" justifyContent="space-between" spacing={3}>
         {topCategoriesObj.map((collection) => {
           return (
-            <CollectionCard
-              key={collection.collectionName}
-              cardWidth={"60px"}
-              imageWidth={"100%"}
-              imageHeight={"60px"}
-              imageBorderRadius={"8px"}
-              imageObjectFit={"cover"}
-              centerText={"center"}
-              collectionName={collection.collectionName}
-              image={collection.image}
-            ></CollectionCard>
+            <Link key={collection.collectionName} className={style.categories} to='/category'>
+              <CollectionCard
+                cardWidth={"60px"}
+                imageWidth={"100%"}
+                imageHeight={"60px"}
+                imageBorderRadius={"8px"}
+                imageObjectFit={"cover"}
+                centerText={"center"}
+                collectionName={collection.collectionName}
+                image={collection.image}
+              ></CollectionCard>
+            </Link>
           );
         })}
       </Stack>

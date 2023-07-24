@@ -1,0 +1,8 @@
+.navbarList{
+    text-decoration: none;
+    color: var(--dark);
+}
+
+.navbarList:visited{
+    color:var(--primary);
+}

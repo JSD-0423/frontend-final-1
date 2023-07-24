@@ -33,3 +33,4 @@ export { default as OrderDetails } from "./orderDetails/OrderDetails.jsx";
 export { default as ProductDetails } from "./productDetails/ProductDetails.jsx";
 export { default as CartPopup } from "./cartPopup/CartPopup.jsx";
 export { default as CartAppBar } from "./cartAppBar/CartAppBar.jsx";
+export { default as CheckoutProduct } from './checkoutProduct/CheckoutProduct.jsx';

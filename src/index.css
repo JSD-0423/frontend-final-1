@@ -6,3 +6,8 @@
   -moz-osx-font-smoothing: grayscale;
   font-family: "Inter", Arial, Helvetica, sans-serif;
 }
+
+:root{
+  --dark:#13101E;
+  --primary:#1B4B66;
+}

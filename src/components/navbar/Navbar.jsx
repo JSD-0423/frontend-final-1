@@ -9,6 +9,9 @@ import PermIdentityOutlinedIcon from "@mui/icons-material/PermIdentityOutlined";
 import LocalHospitalOutlinedIcon from "@mui/icons-material/LocalHospitalOutlined";
 import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
+import { Link } from "react-router-dom";
+import style from './Navbar.module.css'
+
 
 const Navbar = ({ togglePopup }) => {
   const theme = useTheme();
@@ -59,9 +62,11 @@ const Navbar = ({ togglePopup }) => {
         >
           {collections.map((collection) => {
             return (
-              <Typography key={collection} lineHeight="18px" fontSize="14px">
-                {collection}
-              </Typography>
+              <Link className={style.navbarList} key={collection} to='/category'>
+                <Typography sx={{color:'dark.main', '&:hover':{textDecoration:'underline', color:'primary.main'}}} lineHeight="18px" fontSize="14px">
+                  {collection}
+                </Typography>
+              </Link>
             );
           })}
         </Stack>
