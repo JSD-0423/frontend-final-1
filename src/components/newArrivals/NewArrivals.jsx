@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { CardItem, CardsWrapperHeader, CardsWrapper } from "../index.js";
 import NavigateNextOutlinedIcon from "@mui/icons-material/NavigateNextOutlined";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
+import Products from "../../Skeletons/Products.jsx";
 
 const NewArrivals = () => {
   const theme = useTheme();
@@ -48,7 +49,7 @@ const NewArrivals = () => {
       />
       <Stack
         direction="row"
-        justifyContent="space-between"
+        justifyContent="flex-start"
         flexWrap="nowrap"
         spacing={{ xs: 2, md: 3 }}
         overflow="auto"
@@ -78,6 +79,7 @@ const NewArrivals = () => {
             </Link>
           );
         })}
+        {/* <Products /> */}
       </Stack>
     </CardsWrapper>
   );
