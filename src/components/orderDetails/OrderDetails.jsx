@@ -1,7 +1,12 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
 
-const OrderDetails = ({ totalPrice }) => {
+const OrderDetails = ({
+  textValueArray,
+  totalText,
+  totalValue,
+  totalFontWeight,
+}) => {
   return (
     <Box
       sx={{
@@ -12,17 +17,32 @@ const OrderDetails = ({ totalPrice }) => {
         width: "100%",
       }}
     >
-      <Box sx={{ display: "flex", justifyContent: "space-between" }}>
-        <Typography>Subtotal:</Typography>
-        <Typography>$109.38</Typography>
-      </Box>
-      <Box sx={{ display: "flex", justifyContent: "space-between" }}>
-        <Typography>Tax:</Typography>
-        <Typography>$2.00</Typography>
-      </Box>
-      <Box sx={{ display: "flex", justifyContent: "space-between" }}>
-        <Typography sx={{ fontWeight: "600" }}>Total:</Typography>
-        <Typography sx={{ fontWeight: "600" }}>$111.38</Typography>
+      {textValueArray.map(({ text, value, index }) => (
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+            flexDirection: "row",
+          }}
+          key={index}
+        >
+          <Typography>{text}:</Typography>
+          <Typography>${value}</Typography>
+        </Box>
+      ))}
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "space-between",
+          flexDirection: "row",
+        }}
+      >
+        <Typography sx={{ fontWeight: totalFontWeight }}>
+          {totalText}:
+        </Typography>
+        <Typography sx={{ fontWeight: totalFontWeight }}>
+          ${totalValue}
+        </Typography>
       </Box>
     </Box>
   );

@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Box, Typography } from "@mui/material";
 import {
   TextButton,
@@ -10,6 +10,11 @@ import {
 } from "../index.js";
 
 const CartPopup = ({ isPopupVisible, hidePopup }) => {
+  const navigate = useNavigate();
+  const navigateToCart = () => {
+    navigate("/cart");
+    hidePopup();
+  };
   return (
     <>
       <Overlay visible={isPopupVisible} />
@@ -31,10 +36,19 @@ const CartPopup = ({ isPopupVisible, hidePopup }) => {
         <CartAppBar hidePopup={hidePopup} />
         <ProductDetails />
         <ProductDetails />
-        <OrderDetails />
+        <OrderDetails
+          textValueArray={[
+            { text: "Subtotal", value: "109.38" },
+            { text: "Tax", value: "2.00" },
+          ]}
+          totalText={"Total"}
+          totalValue={111.38}
+          totalFontWeight={"500"}
+        />
         <TextButton
           text="Place Order"
           style={{ width: "100%", marginTop: "24px", display: "flex" }}
+          handleClick={navigateToCart}
         />
         <Link sx={{ textDecoration: "none" }} onClick={hidePopup}>
           <Typography
