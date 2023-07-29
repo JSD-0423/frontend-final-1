@@ -30,6 +30,7 @@ export { default as ThumbCarousel } from "./thumbsCarousel/ThumbsCarousel.jsx";
 export { default as ProductListing } from './productListing/ProductListing.jsx';
 export { default as Overlay } from "./overlay/Overlay.jsx";
 export { default as OrderDetails } from "./orderDetails/OrderDetails.jsx";
+export { default as OrdersTable } from "./ordersTable/OrdersTable.jsx";
 export { default as ProductDetails } from "./productDetails/ProductDetails.jsx";
 export { default as CartPopup } from "./cartPopup/CartPopup.jsx";
 export { default as CartAppBar } from "./cartAppBar/CartAppBar.jsx";
