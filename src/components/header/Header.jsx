@@ -13,7 +13,7 @@ import logo from "../../assets/logo.jpg";
 import { Link } from "react-router-dom";
 import { BreadCrumbsContext } from "../../context/BreadCrumbsContext.js";
 
-const Header = ({ togglePopup }) => {
+const Header = ({ togglePopup, setIsSearching }) => {
   const theme = useTheme();
   const {setPagesState} = useContext (BreadCrumbsContext);
   return (
@@ -49,7 +49,7 @@ const Header = ({ togglePopup }) => {
               />
             </Box>
           </IconButton>
-          <Navbar togglePopup={togglePopup} />
+          <Navbar togglePopup={togglePopup} setIsSearching={setIsSearching} />
         </Stack>
       </Toolbar>
     </AppBar>

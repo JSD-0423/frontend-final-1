@@ -13,7 +13,7 @@ import { Link } from "react-router-dom";
 import style from './Navbar.module.css'
 
 
-const Navbar = ({ togglePopup }) => {
+const Navbar = ({ togglePopup, setIsSearching }) => {
   const theme = useTheme();
 
   const collections = [
@@ -91,6 +91,7 @@ const Navbar = ({ togglePopup }) => {
       >
         <Box display={{ xs: "none", md: "block" }} component="div">
           <SearchInput
+            setIsSearching = {setIsSearching}
             searchInputParentBg={"#F0F0F0"}
             searchInputBg={"transparent"}
             searchInputParentBorder={0}
@@ -99,7 +100,6 @@ const Navbar = ({ togglePopup }) => {
             placeholderValue={"Search for products or brands....."}
             searchInputParentWidth={{ md: "290px", lg: "362px" }}
             searchInputWidth={"100%"}
-            searchInputType={"search"}
             searchInputPadding={"0 0 0 50px"}
             searchInputHeight={"44px"}
           />
