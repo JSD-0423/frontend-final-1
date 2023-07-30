@@ -1,7 +1,7 @@
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "./layout/Layout";
-import { Home, ProductDetails, Category, Checkout } from "./pages";
+import { Home, ProductDetails, Category, Checkout, Cart } from "./pages";
 
 
 const App = () => {
@@ -26,6 +26,10 @@ const App = () => {
         {
           path:'/checkout',
           element:<Checkout />
+        },
+        {
+          path:'/cart',
+          element:<Cart />
         }
       ],
     },

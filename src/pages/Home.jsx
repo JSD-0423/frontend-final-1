@@ -1,4 +1,5 @@
 import React from "react";
+import { getAllProducts } from "../API/API";
 
 import {
   HandPickedCollections,
@@ -6,9 +7,13 @@ import {
   NewArrivals,
   ShopByBrands,
   TopCategories,
-  FilterBasedCollection
+  FilterBasedCollection,
 } from "../components";
+import useAxiosFetch from "../hooks/useAxiosFetch";
 const Home = () => {
+  const { data } = useAxiosFetch(getAllProducts);
+  console.log("data: ", data);
+  
   return (
     <>
       <HeroSection />
