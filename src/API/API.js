@@ -18,14 +18,23 @@ const getAllProducts = async (page = 1) => {
 
 const getHandPickedProduct = async () => {
   try {
-    const response = await api.get("/handpick");
+    const response = await api.get("/product/handpick?rating=4.0");
     return response.data;
   } catch (error) {
     throw new Error(error);
   }
 };
 
-const getProduct = async (productId) => {
+const getNewArrivals = async () => {
+  try {
+    const response = await api.get("/product/recent");
+    return response.data;
+  } catch (error) {
+    throw new Error(error);
+  }
+};
+
+const getSingleProduct = async (productId) => {
   try {
     const response = await api.get(`/${productId}`);
     return response.data;
@@ -43,4 +52,10 @@ const searchProduct = async (title) => {
   }
 };
 
-export { getAllProducts, getProduct, getHandPickedProduct, searchProduct };
+export {
+  getAllProducts,
+  getSingleProduct,
+  getHandPickedProduct,
+  getNewArrivals,
+  searchProduct,
+};
