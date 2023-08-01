@@ -3,9 +3,8 @@ import { Link, useLocation } from "react-router-dom";
 import { Box, Breadcrumbs, Typography, useTheme } from "@mui/material";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 
-import { BreadCrumbsContext } from "../../../context/BreadCrumbsContext";
-import { CustomContainer } from "../index";
-import style from "./CustomBreadcrumbs.module.css";
+import { BreadCrumbsContext } from "../../context/BreadCrumbsContext";
+import { CustomContainer } from "./index";
 
 const CustomBreadcrumbs = ({ isSearching }) => {
   const theme = useTheme();
@@ -56,9 +55,18 @@ const CustomBreadcrumbs = ({ isSearching }) => {
                     onClick={() => {
                       handleLinkClick(page);
                     }}
-                    className={style.bredcrumbLink}
                     key={(page === "/" && "home") || page}
                     to={page}
+                    style={{
+                      textDecoration: "none",
+                      color: theme.palette.dark.main,
+                      "&:visited": {
+                        color: theme.palette.primary.main,
+                      },
+                      "&:hover": {
+                        textDecoration: "underline",
+                      },
+                    }}
                   >
                     {(page === "/" && "Home") || page}
                   </Link>

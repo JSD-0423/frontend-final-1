@@ -19,5 +19,5 @@ export { default as SocialIcon } from "./SocialIcon";
 export { default as TextButton } from "./TextButton";
 export { default as TitledList } from "./TitledList";
 export { default as ScrollToTopLink } from "./ScrollTop";
-export { default as Navbar } from "./navbar/Navbar";
-export { default as CustomBreadcrumbs } from "./customBreadcrumbs/CustomBreadcrumbs";
+export { default as Navbar } from "./Navbar";
+export { default as CustomBreadcrumbs } from "./CustomBreadcrumbs";

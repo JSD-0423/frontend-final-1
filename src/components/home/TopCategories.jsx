@@ -1,11 +1,11 @@
 import React from "react";
-import { Box, Stack, Typography } from "@mui/material";
+import { Box, Stack, Typography, useTheme } from "@mui/material";
 
-import { CardsWrapper, ScrollToTopLink } from "../../shared/index";
-import { CollectionCard } from "../index";
-import style from "./TopCategories.module.css";
+import { CardsWrapper, ScrollToTopLink } from "../shared/index";
+import { CollectionCard } from "./index";
 
 const TopCategories = () => {
+  const theme = useTheme();
   const topCategoriesObj = [
     {
       collectionName: "Skincare",
@@ -44,8 +44,14 @@ const TopCategories = () => {
           return (
             <ScrollToTopLink
               key={collection.collectionName}
-              className={style.categories}
               to="/category"
+              style={{
+                textDecoration: "none",
+                color: theme.palette.dark.main,
+                "&:visited": {
+                  color: theme.palette.dark.main,
+                },
+              }}
             >
               <CollectionCard
                 cardWidth={"60px"}

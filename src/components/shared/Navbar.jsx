@@ -7,10 +7,7 @@ import PermIdentityOutlinedIcon from "@mui/icons-material/PermIdentityOutlined";
 import LocalHospitalOutlinedIcon from "@mui/icons-material/LocalHospitalOutlined";
 import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
-import { SearchInput, IconBtn,ScrollToTopLink } from "../index";
-
-import style from './Navbar.module.css'
-
+import { SearchInput, IconBtn, ScrollToTopLink } from "./index";
 
 const Navbar = ({ togglePopup, setIsSearching }) => {
   const theme = useTheme();
@@ -61,8 +58,28 @@ const Navbar = ({ togglePopup, setIsSearching }) => {
         >
           {collections.map((collection) => {
             return (
-              <ScrollToTopLink className={style.navbarList} key={collection} to='/category'>
-                <Typography sx={{color:'dark.main', '&:hover':{textDecoration:'underline', color:'primary.main'}}} lineHeight="18px" fontSize="14px">
+              <ScrollToTopLink
+                style={{
+                  textDecoration: "none",
+                  color: theme.palette.dark.main,
+                  "&:visited": {
+                    color: theme.palette.primary.main,
+                  },
+                }}
+                key={collection}
+                to="/category"
+              >
+                <Typography
+                  sx={{
+                    color: "dark.main",
+                    "&:hover": {
+                      textDecoration: "underline",
+                      color: "primary.main",
+                    },
+                  }}
+                  lineHeight="18px"
+                  fontSize="14px"
+                >
                   {collection}
                 </Typography>
               </ScrollToTopLink>
@@ -90,7 +107,7 @@ const Navbar = ({ togglePopup, setIsSearching }) => {
       >
         <Box display={{ xs: "none", md: "block" }} component="div">
           <SearchInput
-            setIsSearching = {setIsSearching}
+            setIsSearching={setIsSearching}
             searchInputParentBg={"#F0F0F0"}
             searchInputBg={"transparent"}
             searchInputParentBorder={0}

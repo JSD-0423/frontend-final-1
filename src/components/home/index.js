@@ -7,4 +7,4 @@ export { default as ImageCard } from "./ImageCard";
 export { default as NewArrivals } from "./NewArrivals";
 export { default as ShopByBrands } from "./ShopByBrands";
 export { default as TitledImageCard } from "./TitledImageCard";
-export { default as TopCategories } from "./topCategories/TopCategories";
+export { default as TopCategories } from "./TopCategories";
