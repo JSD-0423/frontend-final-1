@@ -1,15 +1,21 @@
 import { Box, Typography, useMediaQuery, useTheme } from "@mui/material";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import {
   CustomContainer,
   OrderDetails,
+  OrdersTable,
   ProductDetails,
   TextButton,
-  OrdersTable,
-} from "../components";
+} from "../components/shared/index";
 
 const Cart = () => {
   const theme = useTheme();
+  const navigate = useNavigate();
+  const navigateToCheckout = () => {
+    navigate("/checkout");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
   const isSmall = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <CustomContainer>
@@ -63,6 +69,7 @@ const Cart = () => {
                 width: "180px",
                 boxSizing: "border-box",
               }}
+              handleClick={navigateToCheckout}
             />
             <TextButton
               text="Continue Shopping"
