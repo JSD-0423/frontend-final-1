@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://tap-final.onrender.com/api/v1",
+  baseURL: "https://tap-final.onrender.com/api/v1",
   headers: {
     "Content-Type": "application/json",
   },
@@ -9,7 +9,25 @@ const api = axios.create({
 
 const getAllProducts = async (page = 1) => {
   try {
-    const response = await api.get(`/?page=${page}`);
+    const response = await api.get(`/product?page=${page}`);
+    return response.data;
+  } catch (error) {
+    throw new Error(error);
+  }
+};
+
+const getAllCategories = async () => {
+  try {
+    const response = await api.get(`/category`);
+    return response.data;
+  } catch (error) {
+    throw new Error(error);
+  }
+};
+
+const getCategoryProducts = async (id) => {
+  try {
+    const response = await api.get(`/category/${id}`);
     return response.data;
   } catch (error) {
     throw new Error(error);
@@ -18,7 +36,7 @@ const getAllProducts = async (page = 1) => {
 
 const getHandPickedProduct = async () => {
   try {
-    const response = await api.get("/product/handpick?rating=4.0");
+    const response = await api.get("/category/handpick?rating=4.5");
     return response.data;
   } catch (error) {
     throw new Error(error);
@@ -28,6 +46,17 @@ const getHandPickedProduct = async () => {
 const getNewArrivals = async () => {
   try {
     const response = await api.get("/product/recent");
+    return response.data;
+  } catch (error) {
+    throw new Error(error);
+  }
+};
+
+const getFilteredProducts = async (id, category) => {
+  try {
+    const response = await api.get(
+      `/product/filter?categoryId=${id}&page=1&count=10&orderBy=-rating&category=${category}`
+    );
     return response.data;
   } catch (error) {
     throw new Error(error);
@@ -58,4 +87,7 @@ export {
   getHandPickedProduct,
   getNewArrivals,
   searchProduct,
+  getAllCategories,
+  getCategoryProducts,
+  getFilteredProducts,
 };

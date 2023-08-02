@@ -3,9 +3,17 @@ import React from "react";
 import { Box, Typography, useTheme } from "@mui/material";
 import { CustomContainer } from "../components/shared/index";
 import { ProductListing } from "../components/category/index";
+import { useParams } from "react-router-dom";
+import useAxiosFetch from "../hooks/useAxiosFetch";
+import { getCategoryProducts, getFilteredProducts } from "../API/API";
+import { TextSkeleton } from "../Skeletons";
 
 const Category = () => {
   const theme = useTheme();
+  const { id } = useParams();
+  const { data, loading } = useAxiosFetch(getCategoryProducts, id);
+  // const Products = useAxiosFetch(getFilteredProducts, [id, data?.category]);
+  // console.log("Products: ", Products.data);
   return (
     <CustomContainer>
       <Box mb={{ xs: 2, md: 5 }} width="100%" height="100%">
@@ -22,7 +30,7 @@ const Category = () => {
         fontWeight="600"
         color={theme.palette.primary.main}
       >
-        Handbags
+        {!loading ? data?.category : <TextSkeleton />}
       </Typography>
       <ProductListing />
     </CustomContainer>
