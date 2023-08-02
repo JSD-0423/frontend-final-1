@@ -20,7 +20,7 @@ const App = () => {
           element:<ProductDetails />
         },
         {
-          path:'/category',
+          path:'/category/:id',
           element:<Category />
         },
         {

@@ -9,7 +9,29 @@ const api = axios.create({
 
 const getAllProducts = async (page = 1, count = 30) => {
   try {
+<<<<<<< HEAD
     const response = await api.get(`/product?page=${page}&count=${count}`);
+=======
+    const response = await api.get(`/product?page=${page}`);
+    return response.data;
+  } catch (error) {
+    throw new Error(error);
+  }
+};
+
+const getAllCategories = async () => {
+  try {
+    const response = await api.get(`/category`);
+    return response.data;
+  } catch (error) {
+    throw new Error(error);
+  }
+};
+
+const getCategoryProducts = async (id) => {
+  try {
+    const response = await api.get(`/category/${id}`);
+>>>>>>> main
     return response.data;
   } catch (error) {
     throw new Error(error);
@@ -18,7 +40,7 @@ const getAllProducts = async (page = 1, count = 30) => {
 
 const getHandPickedProduct = async () => {
   try {
-    const response = await api.get("/product/handpick?rating=4.0");
+    const response = await api.get("/category/handpick?rating=4.5");
     return response.data;
   } catch (error) {
     throw new Error(error);
@@ -28,6 +50,17 @@ const getHandPickedProduct = async () => {
 const getNewArrivals = async (count = 10) => {
   try {
     const response = await api.get(`/product/recent?page=1&count=${count}`);
+    return response.data;
+  } catch (error) {
+    throw new Error(error);
+  }
+};
+
+const getFilteredProducts = async (id, category) => {
+  try {
+    const response = await api.get(
+      `/product/filter?categoryId=${id}&page=1&count=10&orderBy=-rating&category=${category}`
+    );
     return response.data;
   } catch (error) {
     throw new Error(error);
@@ -58,4 +91,7 @@ export {
   getHandPickedProduct,
   getNewArrivals,
   searchProduct,
+  getAllCategories,
+  getCategoryProducts,
+  getFilteredProducts,
 };

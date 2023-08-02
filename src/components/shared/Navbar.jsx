@@ -8,17 +8,11 @@ import LocalHospitalOutlinedIcon from "@mui/icons-material/LocalHospitalOutlined
 import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import { SearchInput, IconBtn, ScrollToTopLink } from "./index";
+import { TextSkeleton } from "../../Skeletons";
 
-const Navbar = ({ togglePopup, setIsSearching }) => {
+const Navbar = ({ togglePopup, setIsSearching, allCategories }) => {
   const theme = useTheme();
-
-  const collections = [
-    "Handbags",
-    "Watches",
-    "Skincare",
-    "Jewellery",
-    "Apparels",
-  ];
+  const { data, loading } = allCategories;
 
   const desktopIcons = [
     {
@@ -37,6 +31,7 @@ const Navbar = ({ togglePopup, setIsSearching }) => {
     NotificationsNoneOutlinedIcon,
     SearchOutlinedIcon,
   ];
+
   return (
     <Stack
       direction="row"
@@ -56,35 +51,39 @@ const Navbar = ({ togglePopup, setIsSearching }) => {
           width="100%"
           color="black"
         >
-          {collections.map((collection) => {
-            return (
-              <ScrollToTopLink
-                style={{
-                  textDecoration: "none",
-                  color: theme.palette.dark.main,
-                  "&:visited": {
-                    color: theme.palette.primary.main,
-                  },
-                }}
-                key={collection}
-                to="/category"
-              >
-                <Typography
-                  sx={{
-                    color: "dark.main",
-                    "&:hover": {
-                      textDecoration: "underline",
-                      color: "primary.main",
+          {!loading ? (
+            data?.categories?.map(({ category, id }) => {
+              return (
+                <ScrollToTopLink
+                  style={{
+                    textDecoration: "none",
+                    color: theme.palette.dark.main,
+                    "&:visited": {
+                      color: theme.palette.primary.main,
                     },
                   }}
-                  lineHeight="18px"
-                  fontSize="14px"
+                  key={id}
+                  to={`/category/${id}`}
                 >
-                  {collection}
-                </Typography>
-              </ScrollToTopLink>
-            );
-          })}
+                  <Typography
+                    sx={{
+                      color: "dark.main",
+                      "&:hover": {
+                        textDecoration: "underline",
+                        color: "primary.main",
+                      },
+                    }}
+                    lineHeight="18px"
+                    fontSize="14px"
+                  >
+                    {category}
+                  </Typography>
+                </ScrollToTopLink>
+              );
+            })
+          ) : (
+            <TextSkeleton />
+          )}
         </Stack>
       </Box>
       <Box component="div" display={{ xs: "block", md: "none" }}>

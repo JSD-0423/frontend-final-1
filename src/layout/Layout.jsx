@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Outlet } from "react-router-dom";
+import { getAllCategories } from "../API/API";
 import { CartPopup } from "../components/cartPopup";
 import { ProductListing } from "../components/category";
 import {
@@ -8,9 +9,10 @@ import {
   CustomContainer,
   CustomBreadcrumbs,
 } from "../components/shared/index";
-import ProductDetailsCarousel from "../Skeletons/ProductDetailsCarousel";
+import useAxiosFetch from "../hooks/useAxiosFetch";
 
 const Layout = () => {
+  const allCategories = useAxiosFetch(getAllCategories);
   const [isPopupVisible, setIsPopupVisible] = useState(false);
 
   const togglePopup = () => {
@@ -25,7 +27,11 @@ const Layout = () => {
 
   return (
     <>
-      <Header togglePopup={togglePopup} setIsSearching={setIsSearching} />
+      <Header
+        togglePopup={togglePopup}
+        setIsSearching={setIsSearching}
+        allCategories={allCategories}
+      />
       {isSearching ? (
         <CustomContainer>
           <CustomBreadcrumbs isSearching={isSearching} />
@@ -35,7 +41,6 @@ const Layout = () => {
         <>
           <CustomBreadcrumbs />
           <Outlet />
-          {/* <ProductDetailsCarousel /> */}
         </>
       )}
       <Footer />
