@@ -36,7 +36,7 @@ const getCategoryProducts = async (page = 1) => {
 
 const getHandPickedProduct = async () => {
   try {
-    const response = await api.get("/product/handpick?rating=4.0");
+    const response = await api.get("/category/handpick?rating=4.5");
     return response.data;
   } catch (error) {
     throw new Error(error);
