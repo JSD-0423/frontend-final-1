@@ -1,5 +1,5 @@
 import React from "react";
-import { getHandPickedProduct } from "../API/API";
+import { getFilteredProducts, getHandPickedProduct } from "../API/API";
 
 import {
   HandPickedCollections,

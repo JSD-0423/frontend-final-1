@@ -25,9 +25,9 @@ const getAllCategories = async () => {
   }
 };
 
-const getCategoryProducts = async (page = 1) => {
+const getCategoryProducts = async (id) => {
   try {
-    const response = await api.get(`/category`);
+    const response = await api.get(`/category/${id}`);
     return response.data;
   } catch (error) {
     throw new Error(error);
@@ -46,6 +46,17 @@ const getHandPickedProduct = async () => {
 const getNewArrivals = async () => {
   try {
     const response = await api.get("/product/recent");
+    return response.data;
+  } catch (error) {
+    throw new Error(error);
+  }
+};
+
+const getFilteredProducts = async (id, category) => {
+  try {
+    const response = await api.get(
+      `/product/filter?categoryId=${id}&page=1&count=10&orderBy=-rating&category=${category}`
+    );
     return response.data;
   } catch (error) {
     throw new Error(error);
@@ -77,5 +88,6 @@ export {
   getNewArrivals,
   searchProduct,
   getAllCategories,
-  getCategoryProducts
+  getCategoryProducts,
+  getFilteredProducts,
 };

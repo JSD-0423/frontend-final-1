@@ -17,7 +17,7 @@ const OrderDetails = ({
         width: "100%",
       }}
     >
-      {textValueArray.map(({ text, value, index }) => (
+      {textValueArray.map(({ text, value }, index) => (
         <Box
           sx={{
             display: "flex",

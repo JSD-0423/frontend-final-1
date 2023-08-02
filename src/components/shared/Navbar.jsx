@@ -63,7 +63,7 @@ const Navbar = ({ togglePopup, setIsSearching, allCategories }) => {
                     },
                   }}
                   key={id}
-                  to="/category"
+                  to={`/category/${id}`}
                 >
                   <Typography
                     sx={{
