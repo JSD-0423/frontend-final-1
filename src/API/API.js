@@ -9,9 +9,6 @@ const api = axios.create({
 
 const getAllProducts = async (page = 1, count = 30) => {
   try {
-<<<<<<< HEAD
-    const response = await api.get(`/product?page=${page}&count=${count}`);
-=======
     const response = await api.get(`/product?page=${page}`);
     return response.data;
   } catch (error) {
@@ -31,7 +28,6 @@ const getAllCategories = async () => {
 const getCategoryProducts = async (id) => {
   try {
     const response = await api.get(`/category/${id}`);
->>>>>>> main
     return response.data;
   } catch (error) {
     throw new Error(error);
