@@ -13,7 +13,7 @@ import { Navbar, ScrollToTopLink } from "./index.js";
 import logo from "../../assets/logo.jpg";
 import { BreadCrumbsContext } from "../../context/BreadCrumbsContext";
 
-const Header = ({ togglePopup, setIsSearching }) => {
+const Header = ({ togglePopup, setIsSearching, allCategories }) => {
   const theme = useTheme();
   const { setPagesState } = useContext(BreadCrumbsContext);
   return (
@@ -50,7 +50,11 @@ const Header = ({ togglePopup, setIsSearching }) => {
               />
             </Box>
           </IconButton>
-          <Navbar togglePopup={togglePopup} setIsSearching={setIsSearching} />
+          <Navbar
+            togglePopup={togglePopup}
+            setIsSearching={setIsSearching}
+            allCategories={allCategories}
+          />
         </Stack>
       </Toolbar>
     </AppBar>
