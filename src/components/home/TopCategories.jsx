@@ -4,7 +4,7 @@ import { Box, Stack, Typography, useTheme } from "@mui/material";
 import { CardsWrapper, ScrollToTopLink } from "../shared/index";
 import { CollectionCard } from "./index";
 
-const TopCategories = () => {
+const TopCategories = ({categories}) => {
   const theme = useTheme();
   const topCategoriesObj = [
     {

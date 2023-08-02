@@ -16,7 +16,7 @@ const Home = () => {
   return (
     <>
       <HeroSection />
-      <TopCategories />
+      <TopCategories categories={handPickedCollections} />
       <NewArrivals />
       <HandPickedCollections handPickedCollections={handPickedCollections} />
       <ShopByBrands />
