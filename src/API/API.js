@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://tap-final.onrender.com/api/v1",
+  baseURL: "https://tap-final.onrender.com/api/v1",
   headers: {
     "Content-Type": "application/json",
   },
@@ -9,7 +9,25 @@ const api = axios.create({
 
 const getAllProducts = async (page = 1) => {
   try {
-    const response = await api.get(`/?page=${page}`);
+    const response = await api.get(`/product?page=${page}`);
+    return response.data;
+  } catch (error) {
+    throw new Error(error);
+  }
+};
+
+const getAllCategories = async () => {
+  try {
+    const response = await api.get(`/category`);
+    return response.data;
+  } catch (error) {
+    throw new Error(error);
+  }
+};
+
+const getCategoryProducts = async (page = 1) => {
+  try {
+    const response = await api.get(`/category`);
     return response.data;
   } catch (error) {
     throw new Error(error);
@@ -58,4 +76,6 @@ export {
   getHandPickedProduct,
   getNewArrivals,
   searchProduct,
+  getAllCategories,
+  getCategoryProducts
 };
