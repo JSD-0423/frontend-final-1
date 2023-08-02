@@ -6,15 +6,22 @@ const TitledImageCard = ({ image, title }) => {
     <Box
       component="div"
       sx={{
-        background: `url(${image})  lightgray 50% / cover no-repeat`,
+        // background: `url(${image})  lightgray 50% / cover no-repeat`,
+        backgroundColor: "white",
         width: ["170px", "280px"],
         height: ["152px", "282px"],
         borderRadius: "16px",
         display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-between",
         overflow: "hidden",
         WebkitFlexBasis: ["45%", "45.5%", "46.8%", "22.5%", "22%"],
       }}
     >
+      <i
+        className={image}
+        style={{ color: "primary.main", fontSize: "70px", alignSelf: "center", }}
+      ></i>
       <div
         style={{
           background:
