@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import { Box, Breadcrumbs, Typography, useTheme } from "@mui/material";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 
@@ -10,7 +10,7 @@ const CustomBreadcrumbs = ({ isSearching }) => {
   const theme = useTheme();
   const location = useLocation();
   const { pagesState, setPagesState } = useContext(BreadCrumbsContext);
-
+  const {id} = useParams();
   const handleLinkClick = (page) => {
     const pageIndex = pagesState.indexOf(page);
     setPagesState(pagesState.slice(0, pageIndex + 1));
@@ -56,7 +56,7 @@ const CustomBreadcrumbs = ({ isSearching }) => {
                       handleLinkClick(page);
                     }}
                     key={(page === "/" && "home") || page}
-                    to={page}
+                    to={page === 'product-details' ? `/product-details/${id}` : page }
                     style={{
                       textDecoration: "none",
                       color: theme.palette.dark.main,

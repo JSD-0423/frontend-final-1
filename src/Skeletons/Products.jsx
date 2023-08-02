@@ -1,16 +1,15 @@
 import { Box, Skeleton, Stack } from "@mui/material";
 import React from "react";
 
-const Products = () => {
+const Products = ({width,height}) => {
   return (
     <>
-      {Array.from(new Array(5)).fill(
-        <Stack display="flex" justifyContent="space-between" flexWrap="nowrap">
-          <Skeleton variant="rectangular" width={210} height={200} />
+      {new Array(6).fill(
+        <Stack direction='column' justifyContent="space-between" flexWrap="nowrap">
+          <Skeleton variant="rounded" width={width} height={height} />
           <Box
             sx={{
               pt: 0.5,
-              width: "200px",
               display: "flex",
               justifyContent: "space-between",
             }}
@@ -20,7 +19,7 @@ const Products = () => {
               <Skeleton width="50%" />
               <Skeleton width="40%" />
             </Box>
-            <Skeleton width="12%" variant="circular" />
+            <Skeleton width={20} height={20} variant="circular" />
           </Box>
         </Stack>
       )}

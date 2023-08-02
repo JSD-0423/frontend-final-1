@@ -8,6 +8,7 @@ import {
   CustomContainer,
   CustomBreadcrumbs,
 } from "../components/shared/index";
+import ProductDetailsCarousel from "../Skeletons/ProductDetailsCarousel";
 
 const Layout = () => {
   const [isPopupVisible, setIsPopupVisible] = useState(false);
@@ -34,6 +35,7 @@ const Layout = () => {
         <>
           <CustomBreadcrumbs />
           <Outlet />
+          {/* <ProductDetailsCarousel /> */}
         </>
       )}
       <Footer />

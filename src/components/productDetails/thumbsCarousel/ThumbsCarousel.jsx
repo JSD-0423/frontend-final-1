@@ -19,7 +19,6 @@ function ThumbCarousel({ productImages }) {
   return (
     <>
       <Swiper
-        spaceBetween={10}
         thumbs={{ swiper: thumbsSwiperRef.current }}
         modules={[FreeMode, Navigation, Thumbs]}
         navigation={true}
@@ -45,7 +44,6 @@ function ThumbCarousel({ productImages }) {
           onSwiper={(swiper) => (thumbsSwiperRef.current = swiper)}
           modules={[FreeMode, Navigation, Thumbs]}
           navigation={true}
-          spaceBetween={15}
           style={{
             "--swiper-navigation-color": "typeHighEmphasis.main",
           }}

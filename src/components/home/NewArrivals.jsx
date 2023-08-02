@@ -4,9 +4,14 @@ import NavigateNextOutlinedIcon from "@mui/icons-material/NavigateNextOutlined";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 
 import { CardItem, CardsWrapperHeader, CardsWrapper, ScrollToTopLink } from "../shared/index";
+import Products from "../../Skeletons/Products";
 
-const NewArrivals = () => {
+const NewArrivals = ({newArrivalsData}) => {
   const theme = useTheme();
+  const {data,loading} = newArrivalsData;
+  if (data) {
+    console.log("data from newArrivals Component:", data.products);
+  }
   let CardIemsObj = [
     {
       id: "Grande",
@@ -53,31 +58,35 @@ const NewArrivals = () => {
         spacing={{ xs: 2, md: 3 }}
         overflow="auto"
       >
-        {CardIemsObj.map((card) => {
-          return (
-            <ScrollToTopLink
-              key={card.id}
-              style={{ textDecoration: "none" }}
-              to="/product-details"
-            >
-              <CardItem
+        {loading ? 
+          (<Products width={286} height={286} />)
+          : 
+          (data.products && data.products.map((card) => {
+            return (
+              <ScrollToTopLink
                 key={card.id}
-                cardWidth={{ xs: "136px", md: "286px" }}
-                imageHeight={{ xs: "138px", md: "286px" }}
-                imageWidth={"100%"}
-                imageBorderRadius={"10px"}
-                imageObjectFit={"cover"}
-                productName={card.productName}
-                productType={card.productType}
-                price={card.price}
-                icons={FavoriteBorderOutlinedIcon}
-                cardItemPseudoIconId={FavoriteBorderOutlinedIcon}
-                image={card.image}
-                fontColor={theme.palette.typeHighEmphasis.main}
-              />
-            </ScrollToTopLink>
-          );
-        })}
+                style={{ textDecoration: "none" }}
+                to={`/product-details/${card.id}`}
+              >
+                <CardItem
+                  key={card.id}
+                  cardWidth={{ xs: "136px", md: "286px" }}
+                  imageHeight={{ xs: "138px", md: "286px" }}
+                  imageWidth={"100%"}
+                  imageBorderRadius={"10px"}
+                  imageObjectFit={"cover"}
+                  productName={card.title}
+                  productType={card.description}
+                  price={`$${card.price}`}
+                  icons={FavoriteBorderOutlinedIcon}
+                  cardItemPseudoIconId={FavoriteBorderOutlinedIcon}
+                  image={card.image}
+                  fontColor={theme.palette.typeHighEmphasis.main}
+                />
+              </ScrollToTopLink>
+            );
+          }))
+        }
       </Stack>
     </CardsWrapper>
   );

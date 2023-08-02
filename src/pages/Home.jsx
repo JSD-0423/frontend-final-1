@@ -9,17 +9,15 @@ import {
   FilterBasedCollection,
 } from "../components/home/index";
 import useAxiosFetch from "../hooks/useAxiosFetch";
-import { getAllProducts } from "../API/API";
+import { getNewArrivals } from "../API/API";
 
 const Home = () => {
-  const { data } = useAxiosFetch(getAllProducts);
-  console.log("data: ", data);
-
+  const newArrivalsData = useAxiosFetch(getNewArrivals)
   return (
     <>
       <HeroSection />
       <TopCategories />
-      <NewArrivals />
+      <NewArrivals newArrivalsData={newArrivalsData} />
       <HandPickedCollections />
       <ShopByBrands />
       <FilterBasedCollection />

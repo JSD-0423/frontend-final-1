@@ -16,7 +16,7 @@ const App = () => {
           element: <Home />,
         },
         {
-          path:'/product-details',
+          path:'/product-details/:id',
           element:<ProductDetails />
         },
         {
@@ -28,7 +28,7 @@ const App = () => {
           element:<Checkout />
         },
         {
-          path:'/cart',
+          path:'/cart/:id',
           element:<Cart />
         }
       ],
