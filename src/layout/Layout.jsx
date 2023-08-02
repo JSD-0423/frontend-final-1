@@ -1,6 +1,13 @@
 import React, { useState } from "react";
 import { Outlet } from "react-router-dom";
-import { Footer, Header, CustomBreadcrumbs, CartPopup, ProductListing, CustomContainer } from "../components";
+import { CartPopup } from "../components/cartPopup";
+import { ProductListing } from "../components/category";
+import {
+  Footer,
+  Header,
+  CustomContainer,
+  CustomBreadcrumbs,
+} from "../components/shared/index";
 
 const Layout = () => {
   const [isPopupVisible, setIsPopupVisible] = useState(false);
@@ -18,17 +25,17 @@ const Layout = () => {
   return (
     <>
       <Header togglePopup={togglePopup} setIsSearching={setIsSearching} />
-      {isSearching ?
+      {isSearching ? (
         <CustomContainer>
           <CustomBreadcrumbs isSearching={isSearching} />
           <ProductListing />
         </CustomContainer>
-        : 
+      ) : (
         <>
           <CustomBreadcrumbs />
           <Outlet />
         </>
-      }
+      )}
       <Footer />
       <CartPopup isPopupVisible={isPopupVisible} hidePopup={hidePopup} />
     </>

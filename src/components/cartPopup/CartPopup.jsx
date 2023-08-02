@@ -1,18 +1,21 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Box, Typography } from "@mui/material";
+
 import {
   TextButton,
-  CartAppBar,
   OrderDetails,
   Overlay,
   ProductDetails,
-} from "../index.js";
+  ScrollToTopLink,
+} from "../shared/index";
+import { CartAppBar } from "./index";
 
 const CartPopup = ({ isPopupVisible, hidePopup }) => {
   const navigate = useNavigate();
   const navigateToCart = () => {
     navigate("/cart");
+    window.scrollTo({ top: 0, behavior: "smooth" });
     hidePopup();
   };
   return (
@@ -50,7 +53,7 @@ const CartPopup = ({ isPopupVisible, hidePopup }) => {
           style={{ width: "100%", marginTop: "24px", display: "flex" }}
           handleClick={navigateToCart}
         />
-        <Link sx={{ textDecoration: "none" }} onClick={hidePopup}>
+        <ScrollToTopLink sx={{ textDecoration: "none" }} onClick={hidePopup}>
           <Typography
             sx={{
               marginTop: "34px",
@@ -66,7 +69,7 @@ const CartPopup = ({ isPopupVisible, hidePopup }) => {
           >
             Continue Shopping
           </Typography>
-        </Link>
+        </ScrollToTopLink>
       </Box>
     </>
   );
