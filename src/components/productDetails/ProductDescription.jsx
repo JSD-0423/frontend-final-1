@@ -17,6 +17,7 @@ import {
   AvailablePrices,
   ScrollToTopLink,
 } from "../shared/index";
+import { ProductDetailsInfo } from "../../Skeletons";
 
 const ProductDescription = ({
   pName,
@@ -25,6 +26,8 @@ const ProductDescription = ({
   pPrice,
   pOldPrice,
   pSpecialOffer,
+  productId,
+  loading,
 }) => {
   const theme = useTheme();
   const PricesStylesObj = {
@@ -50,130 +53,137 @@ const ProductDescription = ({
   };
   return (
     <Box width={{ xs: "100%", md: "814px" }}>
-      <Box mb={{ xs: 2, md: 4 }}>
-        <Typography
-          variant="h1"
-          fontSize={{ xs: "16px", md: "34px" }}
-          lineHeight={{ xs: "20px", md: "44px" }}
-          fontWeight={{ xs: "500", md: "600" }}
-          color={theme.palette.dark.main}
-        >
-          {pName}
-        </Typography>
-        <Typography
-          color={theme.palette.typeLowEmphasis.main}
-          fontSize={{ xs: "14px", md: "20px" }}
-          lineHeight={{ xs: "18px", md: "26px" }}
-          fontWeight={{ xs: "500", md: "600" }}
-        >
-          {pDesc}
-        </Typography>
-      </Box>
-      <Stack
-        direction="row"
-        alignItems="center"
-        spacing={1}
-        flexWrap="nowrap"
-        width="268px"
-        height="24px"
-        mb={{ xs: 2, md: 3 }}
-      >
-        <Rating name="read-only" value={pRating} readOnly />
-        <Typography
-          color={theme.palette.lightText.main}
-          fontWeight="400"
-          fontSize="16px"
-          lineHeight="20px"
-        >
-          {"(250) Ratings"}
-        </Typography>
-      </Stack>
-      <AvailablePrices
-        pPrice={pPrice}
-        pOldPrice={pOldPrice}
-        pSpecialOffer={pSpecialOffer}
-        fontStyles={PricesStylesObj}
-      />
-      <Divider sx={{ mb: { xs: 2, md: 3 } }} />
-      <Box width="179px" height="30px">
-        <QuantityCounter />
-      </Box>
-      <Stack
-        mt={{ xs: 4, md: 5 }}
-        direction="row"
-        width="100%"
-        height="44px"
-        spacing={3}
-      >
-        <Button
-          variant="contained"
-          sx={{
-            width: { xs: "50%", md: "328px" },
-            textTransform: "none",
-            borderRadius: "8px",
-          }}
-        >
-          <IconBtn
-            Icon={LocalMallOutlinedIcon}
-            elementStyle={{ width: "fit-content" }}
-            btnStyle={{
-              justifyContent: "center",
-              color: `${theme.palette.bright.main}`,
-              backgroundColor: "transparent",
-              padding: "0",
-            }}
-            disableRippleEffect={true}
-          />
-          <ScrollToTopLink to="/cart">
-            <Typography
-              width="fit-content"
-              fontWeight="600"
-              fontSize="14px"
-              lineHeight="24px"
-              ml={{ xs: 1, md: 1 }}
-              color={theme.palette.bright.main}
+      {loading ? 
+        (<ProductDetailsInfo />)
+        :
+        ( 
+          <>
+            <Box mb={{ xs: 2, md: 4 }}>
+              <Typography gutterBottom
+                variant="h1"
+                fontSize={{ xs: "16px", md: "34px" }}
+                lineHeight={{ xs: "20px", md: "44px" }}
+                fontWeight={{ xs: "500", md: "600" }}
+                color={theme.palette.dark.main}
+              >
+                {pName}
+              </Typography>
+              <Typography
+                color={theme.palette.typeLowEmphasis.main}
+                fontSize={{ xs: "14px", md: "20px" }}
+                lineHeight={{ xs: "18px", md: "26px" }}
+                fontWeight={{ xs: "500", md: "600" }}
+              >
+                {pDesc}
+              </Typography>
+            </Box>
+            <Stack
+              direction="row"
+              alignItems="center"
+              spacing={1}
+              flexWrap="nowrap"
+              width="268px"
+              height="24px"
+              mb={{ xs: 2, md: 3 }}
             >
-              Add to bag
-            </Typography>
-          </ScrollToTopLink>
-        </Button>
-        <Button
-          variant="outlined"
-          sx={{
-            width: { xs: "50%", md: "240px" },
-            padding: "5px",
-            textTransform: "none",
-            border: `2px solid ${theme.palette.primary.main}`,
-            "&:hover": {
-              backgroundColor: "rgb(53 58 61 / 14%)",
-              border: `2px solid ${theme.palette.primary.main}`,
-            },
-            borderRadius: "8px",
-          }}
-        >
-          <IconBtn
-            Icon={FavoriteBorderOutlinedIcon}
-            elementStyle={{ width: "fit-content" }}
-            btnStyle={{
-              justifyContent: "center",
-              color: `${theme.palette.bright.main}`,
-              backgroundColor: "transparent",
-              padding: "0",
-            }}
-            disableRippleEffect={true}
-          />
-          <Typography
-            width={{ xs: "100%", md: "fit-content" }}
-            fontWeight="600"
-            fontSize="14px"
-            lineHeight="normal"
-            ml={{ xs: 0, md: 1 }}
-            color={theme.palette.primary.main}
-          >
-            Add To Wishlist
-          </Typography>
-        </Button>
-      </Stack>
+              <Rating name="read-only" value={pRating} readOnly />
+              <Typography
+                color={theme.palette.lightText.main}
+                fontWeight="400"
+                fontSize="16px"
+                lineHeight="20px"
+              >
+                {"(250) Ratings"}
+              </Typography>
+            </Stack>
+            <AvailablePrices
+              pPrice={pPrice}
+              pOldPrice={pOldPrice}
+              pSpecialOffer={pSpecialOffer}
+              fontStyles={PricesStylesObj}
+            />
+            <Divider sx={{ mb: { xs: 2, md: 3 } }} />
+            <Box m={['auto',0]} width={["fit-content","179px"]} height="30px">
+              <QuantityCounter />
+            </Box>
+            <Stack
+              mt={{ xs: 4, md: 5 }}
+              direction="row"
+              width="100%"
+              height="44px"
+              spacing={3}
+            >
+              <ScrollToTopLink linkStyles={{textDecoration:'none', height:'100%', display:'flex' , width: { xs: "50%", md: "328px" }}} to={`/cart/${productId}`} >
+                <Button
+                  variant="contained"
+                  sx={{
+                    width: '100%',
+                    textTransform: "none",
+                    borderRadius: "8px",
+                  }}
+                >
+                  <IconBtn
+                    Icon={LocalMallOutlinedIcon}
+                    elementStyle={{ width: "fit-content" }}
+                    btnStyle={{
+                      justifyContent: "center",
+                      color: `${theme.palette.bright.main}`,
+                      backgroundColor: "transparent",
+                      padding: "0",
+                    }}
+                    disableRippleEffect={true}
+                  />
+                    <Typography
+                      width="fit-content"
+                      fontWeight="600"
+                      fontSize="14px"
+                      lineHeight="24px"
+                      ml={{ xs: 1, md: 1 }}
+                      color={theme.palette.bright.main}
+                    >
+                      Add to bag
+                    </Typography>
+                </Button>
+              </ScrollToTopLink>
+              <Button
+                variant="outlined"
+                sx={{
+                  width: { xs: "50%", md: "240px" },
+                  padding: "5px",
+                  textTransform: "none",
+                  border: `2px solid ${theme.palette.primary.main}`,
+                  "&:hover": {
+                    backgroundColor: "rgb(53 58 61 / 14%)",
+                    border: `2px solid ${theme.palette.primary.main}`,
+                  },
+                  borderRadius: "8px",
+                }}
+              >
+                <IconBtn
+                  Icon={FavoriteBorderOutlinedIcon}
+                  elementStyle={{ width: "fit-content" }}
+                  btnStyle={{
+                    justifyContent: "center",
+                    color: `${theme.palette.primary.main}`,
+                    backgroundColor: "transparent",
+                    padding: "0",
+                  }}
+                  disableRippleEffect={true}
+                />
+                <Typography
+                  width={{ xs: "100%", md: "fit-content" }}
+                  fontWeight="600"
+                  fontSize="14px"
+                  lineHeight="normal"
+                  ml={{ xs: 0, md: 1 }}
+                  color={theme.palette.primary.main}
+                >
+                  Add To Wishlist
+                </Typography>
+              </Button>
+            </Stack>
+          </>)
+      }
     </Box>
   );
 };

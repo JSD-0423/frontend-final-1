@@ -15,7 +15,7 @@ const IconBtn = ({
     btnStyle[pseudoType] = pseudoStyle;
   }
   return (
-    <Stack direction="row" sx={elementStyle}>
+    <Stack direction="row"  sx={elementStyle}>
       <IconButton sx={btnStyle} onClick={handleClick}>
         <Icon sx={iconStyle} />
       </IconButton>

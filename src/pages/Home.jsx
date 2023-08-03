@@ -1,5 +1,5 @@
 import React from "react";
-import { getFilteredProducts, getHandPickedProduct } from "../API/API";
+import { getHandPickedProduct, getNewArrivals } from "../API/API";
 
 import {
   HandPickedCollections,
@@ -10,14 +10,14 @@ import {
   FilterBasedCollection,
 } from "../components/home/index";
 import useAxiosFetch from "../hooks/useAxiosFetch";
-
 const Home = () => {
+  const newArrivalsData = useAxiosFetch(getNewArrivals);
   const handPickedCollections = useAxiosFetch(getHandPickedProduct);
   return (
     <>
       <HeroSection />
       <TopCategories categories={handPickedCollections} />
-      <NewArrivals />
+      <NewArrivals newArrivalsData={newArrivalsData} />
       <HandPickedCollections handPickedCollections={handPickedCollections} />
       <ShopByBrands />
       <FilterBasedCollection />

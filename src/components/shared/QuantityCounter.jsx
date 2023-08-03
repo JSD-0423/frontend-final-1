@@ -21,7 +21,7 @@ const QuantityCounter = () => {
     <Box
       sx={{
         display: "flex",
-        width: "fit-content",
+        width:['100%','fit-content'],
         padding: "1px",
       }}
     >

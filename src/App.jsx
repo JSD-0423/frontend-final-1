@@ -16,11 +16,11 @@ const App = () => {
           element: <Home />,
         },
         {
-          path:'/product-details',
+          path:'/product-details/:id/:category?',
           element:<ProductDetails />
         },
         {
-          path:'/category/:id',
+          path:'/category/:category',
           element:<Category />
         },
         {
@@ -28,7 +28,7 @@ const App = () => {
           element:<Checkout />
         },
         {
-          path:'/cart',
+          path:'/cart/:id',
           element:<Cart />
         }
       ],

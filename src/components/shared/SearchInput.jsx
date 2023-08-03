@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import { Search } from "@mui/icons-material";
 import { Paper } from "@mui/material";
+import useDebounce from "../../hooks/useDebounce";
+import { SearchInputValueContext } from "../../context/SearchInputValue";
+import { HandPickedIsClickedContext } from "../../context/HandPickedIsClickedContext";
 
 const SearchInput = ({
   searchInputParentBg,
@@ -18,27 +21,22 @@ const SearchInput = ({
   searchInputParentHeight,
   setIsSearching,
 }) => {
-  const debounce = (fn, delay) => {
-    let timerId;
-    return (...args) => {
-      if (timerId) {
-        clearTimeout(timerId);
-      }
-      timerId = setTimeout(() => {
-        fn(...args);
-        timerId = null;
-      }, delay);
-    };
-  };
+  const {inputValue, setInputValue} = useContext(SearchInputValueContext);
+  const debouncedInputValue = useDebounce(inputValue, 300);
+  const {setHandPickedisClicked} = useContext(HandPickedIsClickedContext)
 
-  const debouncedSetIsSearching = debounce(() => setIsSearching(true), 300);
+   useEffect(() => {
+    if (debouncedInputValue === "") {
+      setIsSearching(false);
+      setHandPickedisClicked(true)
+    } else {
+      setIsSearching(true);
+      setHandPickedisClicked(false)
+    }
+  }, [debouncedInputValue]);
 
   const handleChange = (e) => {
-    if (e.target.value === "") {
-      setIsSearching(false);
-    } else {
-      debouncedSetIsSearching();
-    }
+    setInputValue(e.target.value);
   };
 
   return (

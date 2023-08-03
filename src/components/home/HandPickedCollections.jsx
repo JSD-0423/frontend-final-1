@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Stack, useTheme } from "@mui/material";
 
 import {
@@ -7,13 +7,18 @@ import {
   ScrollToTopLink,
 } from "../shared/index.js";
 import { TitledImageCard } from "../home/index";
-import { TitledCardSkeleton } from "../../Skeletons/index.jsx";
+import { TitledCardSkeleton } from "../../Skeletons/index";
+import { HandPickedIsClickedContext } from "../../context/HandPickedIsClickedContext";
 
 const HandPickedCollections = ({ handPickedCollections }) => {
   const theme = useTheme();
   const { data, loading } = handPickedCollections;
   const collections = data?.slice(0, 4);
+  const {setHandPickedisClicked} = useContext(HandPickedIsClickedContext);
 
+const handleClick = () =>{
+  setHandPickedisClicked(true);
+}
   return (
     <CardsWrapper wrapperBg={theme.palette.primary.main}>
       <CardsWrapperHeader
@@ -31,9 +36,10 @@ const HandPickedCollections = ({ handPickedCollections }) => {
         >
           {collections?.map(({ id, category, icon }) => (
             <ScrollToTopLink
+              onClick={handleClick}
               key={id}
               style={{ textDecoration: "none" }}
-              to={`/category/${id}`}
+              to={`/category/${category}`}
             >
               <TitledImageCard image={icon} title={category} />
             </ScrollToTopLink>

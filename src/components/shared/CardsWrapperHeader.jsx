@@ -31,7 +31,7 @@ const CardsWrapperHeader = ({
       </Typography>
       <Box>
         {WrapperGoToIcon && WrapperPseudoIconId && showBtnOnAllSizes && (
-          <ScrollToTopLink to="/product-details" style={{ textDecoration: "none" }}>
+          <ScrollToTopLink to={`/category/viewall`} style={{ textDecoration: "none" }}>
             <Stack direction="row" alignItems="center">
               <Typography
                 whiteSpace="nowrap"
