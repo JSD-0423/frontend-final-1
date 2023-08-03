@@ -25,7 +25,7 @@ const CardItem = ({
   const { imageExists, loading, FallBackImage } = useImageExists(image);
 
   return (
-    <Box width={cardWidth} flexShrink={0}>
+    <Box width={cardWidth}>
       <Box width={imageWidth} height={imageHeight} mb={1}>
         {loading ? (
           <p>Loading...</p>

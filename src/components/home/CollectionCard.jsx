@@ -13,7 +13,7 @@ const CollectionCard = ({
   const { imageExists, loading, FallBackImage } = useImageExists(imageURL);
 
   return (
-    <Box component="div" width={cardWidth} flexShrink={0} marginLeft="0px">
+    <Box width={cardWidth} marginLeft="0px">
       <Box component="div" width={imageWidth} height={imageHeight} mb={1}>
         {loading ? (
           <p>Loading...</p>
@@ -31,8 +31,12 @@ const CollectionCard = ({
           />
         )}
       </Box>
-      <Box component="div">
+      <Box>
         <Typography
+          width='100%'
+          whiteSpace='nowrap'
+          textOverflow='ellipsis'
+          overflow='hidden'
           textAlign="center"
           fontSize="12px"
           fontWeight="500"

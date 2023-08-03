@@ -5,7 +5,7 @@ import { CustomContainer } from "../components/shared/index";
 import { ProductListing } from "../components/category/index";
 import { useParams } from "react-router-dom";
 import useAxiosFetch from "../hooks/useAxiosFetch";
-import { getAllProducts, getCategoryProducts, getFilteredProducts } from "../API/API";
+import { getAllProducts, getCategoryProducts} from "../API/API";
 import { TextSkeleton } from "../Skeletons";
 
 const Category = () => {

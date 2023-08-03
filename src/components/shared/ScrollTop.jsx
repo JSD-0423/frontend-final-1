@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
 import { Box } from "@mui/material";
+import styles from './ScrollTop.module.css'
 
 const ScrollToTopLink = ({ to, children,linkStyles, ...restProps }) => {
   const scrollToTop = () => {
@@ -9,7 +10,7 @@ const ScrollToTopLink = ({ to, children,linkStyles, ...restProps }) => {
   
   return (
     <Box sx={linkStyles}>
-      <Link to={to} style={{textDecoration:'none', width:'100%', display:'flex'}} onClick={scrollToTop}  {...restProps}>
+      <Link to={to} className={styles.ScrolltoTopLink} style={{width:'100%', display:'flex', justifyContent:'center'}} onClick={scrollToTop}  {...restProps}>
         {children}
       </Link>
     </Box>
