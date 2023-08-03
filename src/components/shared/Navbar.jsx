@@ -87,15 +87,17 @@ const Navbar = ({ togglePopup, setIsSearching, allCategories }) => {
         </Stack>
       </Box>
       <Box component="div" display={{ xs: "block", md: "none" }}>
-        <Typography
-          fontWeight="600"
-          color={theme.palette.primary.main}
-          fontSize="20px"
-          height="100%"
-          lineHeight="44px"
-        >
-          Home
-        </Typography>
+        <ScrollToTopLink to="/">
+          <Typography
+            fontWeight="600"
+            color={theme.palette.primary.main}
+            fontSize="20px"
+            height="100%"
+            lineHeight="44px"
+          >
+            Home
+          </Typography>
+        </ScrollToTopLink>
       </Box>
       <Stack
         direction="row"
