@@ -26,7 +26,11 @@ const ProductListing = ({categoryData, category, allNewArrivalsData}) => {
   }
 
   if (!data) {
-    return <Products numberOfItems={itemsPerPage} />;
+    return (
+      <Box display="grid" gap={{ xs: "25px 22px", md: "87px 31px" }} gridTemplateColumns={{ xs: "repeat(2 , 1fr)", md: "repeat(4 , 1fr)" }}>
+        <Products height={['156px',"286px"]} width={['156px',"286px"]} numberOfItems={itemsPerPage} />;  
+      </Box>
+    )
   }
 
   if (data.products.length === 0) {
@@ -77,15 +81,13 @@ const ProductListing = ({categoryData, category, allNewArrivalsData}) => {
             <ScrollToTopLink
               key={card.id}
               linkStyles={{
-                textDecoration: "none",
-                display: "flex",
-                width: ['50%', '286px'],
+                width: '100%',
               }}
               to={`/product-details/${card.id}/${category}`}
             >
               <CardItem
-                cardWidth={"100%"}
-                imageHeight={"286px"}
+                cardWidth={['156px',"286px"]}
+                imageHeight={['156px',"286px"]}
                 imageWidth={"100%"}
                 imageBorderRadius={"10px"}
                 imageObjectFit={"cover"}

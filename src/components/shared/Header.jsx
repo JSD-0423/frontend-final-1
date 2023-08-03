@@ -40,16 +40,6 @@ const Header = ({ togglePopup, setIsSearching, allCategories }) => {
               />
             </ScrollToTopLink>
           </IconButton>
-          <IconButton sx={{ display: { xs: "block", md: "none" }, p: "0 8px" }}>
-            <Box component="div" display="flex" alignItems="center">
-              <SegmentOutlinedIcon
-                sx={{
-                  transform: "scale(-1)",
-                  color: theme.palette.primary.main,
-                }}
-              />
-            </Box>
-          </IconButton>
           <Navbar
             togglePopup={togglePopup}
             setIsSearching={setIsSearching}

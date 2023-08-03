@@ -23,7 +23,7 @@ const CardItem = ({
   const theme = useTheme();
 
   return (
-    <Box width={cardWidth} flexShrink={0}>
+    <Box width={cardWidth}>
       <Box width={imageWidth} height={imageHeight} mb={1}>
         <img
           style={{

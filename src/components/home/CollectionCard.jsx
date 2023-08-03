@@ -11,7 +11,7 @@ const CollectionCard = ({
   collectionName,
 }) => {
   return (
-    <Box component="div" width={cardWidth} flexShrink={0} marginLeft="0px">
+    <Box width={cardWidth} marginLeft="0px">
       <Box component="div" width={imageWidth} height={imageHeight} mb={1}>
         <img
           style={{
@@ -25,8 +25,12 @@ const CollectionCard = ({
           alt="collection-thumbnail"
         />
       </Box>
-      <Box component="div">
+      <Box>
         <Typography
+          width='100%'
+          whiteSpace='nowrap'
+          textOverflow='ellipsis'
+          overflow='hidden'
           textAlign="center"
           fontSize="12px"
           fontWeight="500"
