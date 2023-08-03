@@ -50,7 +50,7 @@ const HeroSection = () => {
           >
             Trendy handbags collection for your party animal
           </Typography>
-          <ScrollToTopLink to="/product-details">
+          <ScrollToTopLink to="/">
             <TextButton
               text="See more"
               icon={<ArrowForwardIcon />}

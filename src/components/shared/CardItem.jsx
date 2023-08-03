@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, Rating, Stack, Typography, useTheme } from "@mui/material";
 import { IconBtn } from "./index";
+import useImageExists from "../../hooks/useImageExists";
 
 const CardItem = ({
   cardWidth,
@@ -21,21 +22,26 @@ const CardItem = ({
   location,
 }) => {
   const theme = useTheme();
+  const { imageExists, loading, FallBackImage } = useImageExists(image);
 
   return (
     <Box width={cardWidth}>
       <Box width={imageWidth} height={imageHeight} mb={1}>
-        <img
-          style={{
-            width: "100%",
-            height: "100%",
-            objectFit: imageObjectFit,
-            verticalAlign: "middle",
-            borderRadius: imageBorderRadius,
-          }}
-          src={image}
-          alt={productName}
-        />
+        {loading ? (
+          <p>Loading...</p>
+        ) : (
+          <img
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: imageObjectFit,
+              verticalAlign: "middle",
+              borderRadius: imageBorderRadius,
+            }}
+            src={imageExists ? image : FallBackImage}
+            alt={productName}
+          />
+        )}
       </Box>
       <Stack width="100%" direction="row" justifyContent="space-between">
         <Box width="90%">
@@ -52,7 +58,7 @@ const CardItem = ({
           </Typography>
           <Typography
             variant="body1"
-            whiteSpace='nowrap'
+            whiteSpace="nowrap"
             noWrap
             color={theme.palette.typeLowEmphasis.main}
             fontWeight={{ xs: "500", md: "400" }}
