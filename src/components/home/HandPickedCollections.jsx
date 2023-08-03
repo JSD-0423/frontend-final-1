@@ -29,7 +29,7 @@ const handleClick = () =>{
       {!loading ? (
         <Stack
           direction="row"
-          flexWrap="wrap"
+          overflow='auto'
           gap={["26px", "40px", "60px", "40px"]}
           marginTop="24px"
           paddingBottom="42px"

@@ -5,8 +5,8 @@ const Products = ({width,height,numberOfItems}) => {
   return (
     <>
     {new Array(numberOfItems).fill(null).map((_, index) => (
-      <Stack key={index} width={width} height={height}  direction='column' justifyContent="space-between" flexWrap="nowrap">
-      <Skeleton variant="rounded" width={width} height={height} />
+      <Stack key={index} width={width} height={height}  direction='column' margin='auto' justifyContent="space-between" flexWrap="nowrap">
+      <Skeleton variant="rounded" width='100%' height='100%' />
       <Box
         sx={{
           pt: 0.5,

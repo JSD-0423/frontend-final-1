@@ -8,19 +8,19 @@ const TopCategories = ({categories}) => {
   const theme = useTheme();
   const topCategoriesObj = [
     {
-      collectionName: "Skincare",
+      collectionName: "Electronics",
       image: "https://images2.imgbox.com/6b/fc/8s8qcqoW_o.png",
     },
     {
-      collectionName: "Jewellery",
+      collectionName: "Fashion",
       image: "https://images2.imgbox.com/1c/22/FGWA3OZv_o.png",
     },
     {
-      collectionName: "Handbags",
+      collectionName: "Food",
       image: "https://images2.imgbox.com/6b/3c/zM5FfDQP_o.png",
     },
     {
-      collectionName: "Watches",
+      collectionName: "Entertainment",
       image: "https://images2.imgbox.com/66/1f/QJgTOEVx_o.png",
     },
   ];
@@ -44,14 +44,7 @@ const TopCategories = ({categories}) => {
           return (
             <ScrollToTopLink
               key={collection.collectionName}
-              to="/category"
-              linkStyles={{
-                textDecoration: "none",
-                color: theme.palette.dark.main,
-                "&:visited": {
-                  color: theme.palette.dark.main,
-                },
-              }}
+              to={`/category/${collection.collectionName}`}
             >
               <CollectionCard
                 cardWidth={"60px"}
@@ -59,7 +52,6 @@ const TopCategories = ({categories}) => {
                 imageHeight={"60px"}
                 imageBorderRadius={"8px"}
                 imageObjectFit={"cover"}
-                centerText={"center"}
                 collectionName={collection.collectionName}
                 image={collection.image}
               ></CollectionCard>

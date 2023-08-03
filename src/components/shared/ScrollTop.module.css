@@ -1,0 +1,8 @@
+.ScrolltoTopLink{
+    text-decoration: none;
+    color: black;
+}
+
+.ScrolltoTopLink:visited{
+    color: black;
+}
