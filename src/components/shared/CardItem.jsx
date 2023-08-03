@@ -52,6 +52,7 @@ const CardItem = ({
           </Typography>
           <Typography
             variant="body1"
+            whiteSpace='nowrap'
             noWrap
             color={theme.palette.typeLowEmphasis.main}
             fontWeight={{ xs: "500", md: "400" }}

@@ -1,0 +1,13 @@
+.breadcrumbLink{
+    text-decoration: none;
+}
+
+.breadcrumbLink:hover{
+    text-decoration: underline;
+    color: var(--primary) !important;
+
+}
+
+.breadcrumbLink:visited{
+    color: var(--dark);
+}

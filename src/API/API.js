@@ -7,9 +7,9 @@ const api = axios.create({
   },
 });
 
-const getAllProducts = async (page = 1, count = 30) => {
+const getAllProducts = async (page = 1, count = 20) => {
   try {
-    const response = await api.get(`/product?page=${page}`);
+    const response = await api.get(`/product/recent?page=${page}&count=${count}`);
     return response.data;
   } catch (error) {
     throw new Error(error);
@@ -25,9 +25,9 @@ const getAllCategories = async () => {
   }
 };
 
-const getCategoryProducts = async (id) => {
+const getCategoryProducts = async (category) => {
   try {
-    const response = await api.get(`/category/${id}`);
+    const response = await api.get(`/product/filter?category=${category}&orderBy=-rating`);
     return response.data;
   } catch (error) {
     throw new Error(error);
@@ -72,9 +72,9 @@ const getSingleProduct = async (productId) => {
   }
 };
 
-const searchProduct = async (title) => {
+const searchProduct = async (title="") => {
   try {
-    const response = await api.get(`/search?title=${title}`);
+    const response = await api.get(`/product/search?title=${title}`);
     return response.data;
   } catch (error) {
     throw new Error(error);

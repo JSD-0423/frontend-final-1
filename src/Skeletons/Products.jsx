@@ -1,11 +1,11 @@
 import { Box, Skeleton, Stack } from "@mui/material";
 import React from "react";
 
-const Products = ({width,height}) => {
+const Products = ({width,height,numberOfItems}) => {
   return (
     <>
-      {new Array(6).fill(
-        <Stack direction='column' justifyContent="space-between" flexWrap="nowrap">
+      {new Array(numberOfItems).fill(
+        <Stack width={width} height={height}  direction='column' justifyContent="space-between" flexWrap="nowrap">
           <Skeleton variant="rounded" width={width} height={height} />
           <Box
             sx={{

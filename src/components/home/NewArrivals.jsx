@@ -9,39 +9,6 @@ import Products from "../../Skeletons/Products";
 const NewArrivals = ({newArrivalsData}) => {
   const theme = useTheme();
   const {data,loading} = newArrivalsData;
-  if (data) {
-    console.log("data from newArrivals Component:", data.products);
-  }
-  let CardIemsObj = [
-    {
-      id: "Grande",
-      productName: "Grande",
-      productType: "Blossom Pouch",
-      price: "$39.49",
-      image: "https://images2.imgbox.com/38/dc/zwOWUdvF_o.png",
-    },
-    {
-      id: "Coach",
-      productName: "Coach",
-      productType: "Leather Coach Bag",
-      price: "$54.69",
-      image: "https://images2.imgbox.com/de/04/cUdIOyc4_o.png",
-    },
-    {
-      id: "Remus",
-      productName: "Remus",
-      productType: "Brown Strap Bag",
-      price: "$57.00",
-      image: "https://images2.imgbox.com/f8/d0/W1KOpcQ1_o.png",
-    },
-    {
-      id: "Boujee",
-      productName: "Boujee",
-      productType: "Black Bag",
-      price: "$56.49",
-      image: "https://images2.imgbox.com/9b/2f/gl7x6OYs_o.png",
-    },
-  ];
   return (
     <CardsWrapper>
       <CardsWrapperHeader
@@ -59,7 +26,7 @@ const NewArrivals = ({newArrivalsData}) => {
         overflow="auto"
       >
         {loading ? 
-          (<Products width={286} height={286} />)
+          (<Products numberOfItems={6} width={286} height={286} />)
           : 
           (data.products && data.products.map((card) => {
             return (

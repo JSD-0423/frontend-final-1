@@ -16,11 +16,11 @@ const App = () => {
           element: <Home />,
         },
         {
-          path:'/product-details/:id',
+          path:'/product-details/:id/:category?',
           element:<ProductDetails />
         },
         {
-          path:'/category/:id',
+          path:'/category/:category',
           element:<Category />
         },
         {

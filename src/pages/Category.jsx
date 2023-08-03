@@ -5,15 +5,15 @@ import { CustomContainer } from "../components/shared/index";
 import { ProductListing } from "../components/category/index";
 import { useParams } from "react-router-dom";
 import useAxiosFetch from "../hooks/useAxiosFetch";
-import { getCategoryProducts, getFilteredProducts } from "../API/API";
+import { getAllProducts, getCategoryProducts, getFilteredProducts } from "../API/API";
 import { TextSkeleton } from "../Skeletons";
 
 const Category = () => {
   const theme = useTheme();
-  const { id } = useParams();
-  const { data, loading } = useAxiosFetch(getCategoryProducts, id);
-  // const Products = useAxiosFetch(getFilteredProducts, [id, data?.category]);
-  // console.log("Products: ", Products.data);
+  const { category } = useParams();
+  const { data,loading } = useAxiosFetch(getCategoryProducts, category);
+  const {data:allNewArrivalsData} = useAxiosFetch(getAllProducts,1,74);
+
   return (
     <CustomContainer>
       <Box mb={{ xs: 2, md: 5 }} width="100%" height="100%">
@@ -30,9 +30,9 @@ const Category = () => {
         fontWeight="600"
         color={theme.palette.primary.main}
       >
-        {!loading ? data?.category : <TextSkeleton />}
+        {!loading ? category: <TextSkeleton />}
       </Typography>
-      <ProductListing />
+      <ProductListing allNewArrivalsData={allNewArrivalsData} categoryData={data} category={category}/>
     </CustomContainer>
   );
 };

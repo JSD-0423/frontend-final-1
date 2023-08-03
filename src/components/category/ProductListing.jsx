@@ -1,17 +1,44 @@
-import React, { useState } from "react";
-import { Box, Pagination, Stack, useTheme } from "@mui/material";
+import React, { useContext, useState } from "react";
+import { Box, Pagination, Stack, Typography, useTheme } from "@mui/material";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
-
 import { CardItem, AvailablePrices, ScrollToTopLink } from "../shared/index";
-import CardIemsObj from "./productLists";
+import useAxiosFetch from "../../hooks/useAxiosFetch";
+import { SearchInputValueContext } from "../../context/SearchInputValue";
+import { searchProduct } from "../../API/API";
+import { Products } from "../../Skeletons";
+import { HandPickedIsClickedContext } from "../../context/HandPickedIsClickedContext";
 
-const ProductListing = ({ productList }) => {
-  const data = productList ? productList : CardIemsObj;
+const ProductListing = ({categoryData, category, allNewArrivalsData}) => {
+  const {inputValue} = useContext(SearchInputValueContext);
+  const {handPickedisClicked, setHandPickedisClicked} = useContext(HandPickedIsClickedContext);
+  const {data: searchData} = useAxiosFetch(searchProduct,inputValue);
+  let data;
   const theme = useTheme();
   const [page, setPage] = useState(1);
-  const [itemsPerPage, SetItemsPerPage] = useState(9);
+  const [itemsPerPage, SetItemsPerPage] = useState(20);
 
-  const newData = data.slice((page - 1) * itemsPerPage, page * itemsPerPage);
+  if (category === 'viewall') {
+    data = allNewArrivalsData;
+  } else if (handPickedisClicked === true) {
+    data = categoryData;
+  } else {
+    data = searchData;
+  }
+
+  if (!data) {
+    return <Products numberOfItems={itemsPerPage} />;
+  }
+
+  if (data.products.length === 0) {
+    return(
+            <Stack direction='row' justifyContent='center' alignItems='center' width='100%' height='90vh'>
+              <Typography variant="h1">
+                No items were found
+              </Typography>  
+            </Stack>
+          ) 
+  }
+  const newData = data.products.slice((page - 1) * itemsPerPage, page * itemsPerPage);
 
   const handleChange = (e, p) => {
     setPage(p);
@@ -49,22 +76,21 @@ const ProductListing = ({ productList }) => {
           return (
             <ScrollToTopLink
               key={card.id}
-              style={{
+              linkStyles={{
                 textDecoration: "none",
-                display: "inline-block",
-                width: { xs: "100%", md: "100%", lg: "286px" },
-                height: "fit-content",
+                display: "flex",
+                width: ['50%', '286px'],
               }}
-              to="/product-details"
+              to={`/product-details/${card.id}/${category}`}
             >
               <CardItem
                 cardWidth={"100%"}
-                imageHeight={"100%"}
+                imageHeight={"286px"}
                 imageWidth={"100%"}
                 imageBorderRadius={"10px"}
                 imageObjectFit={"cover"}
-                productName={card.productName}
-                productType={card.productType}
+                productName={card.title}
+                productType={card.description}
                 prices={
                   <AvailablePrices
                     pPrice={card.price}
@@ -79,7 +105,7 @@ const ProductListing = ({ productList }) => {
                 image={card.image}
                 fontColor={theme.palette.typeHighEmphasis.main}
                 ratingStars={true}
-                pRating={4}
+                pRating={card.rating}
                 location={"category-page"}
               />
             </ScrollToTopLink>
@@ -94,7 +120,7 @@ const ProductListing = ({ productList }) => {
         spacing={2}
       >
         <Pagination
-          count={Math.ceil(data.length / itemsPerPage)}
+          count={Math.ceil(data.products.length / itemsPerPage)}
           page={page}
           onChange={handleChange}
         />

@@ -2,15 +2,15 @@ import React, { useContext, useEffect } from "react";
 import { Link, useLocation, useParams } from "react-router-dom";
 import { Box, Breadcrumbs, Typography, useTheme } from "@mui/material";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-
 import { BreadCrumbsContext } from "../../context/BreadCrumbsContext";
 import { CustomContainer } from "./index";
+import styles from './CustomBreadcrumbs.module.css'
 
 const CustomBreadcrumbs = ({ isSearching }) => {
   const theme = useTheme();
   const location = useLocation();
   const { pagesState, setPagesState } = useContext(BreadCrumbsContext);
-  const {id} = useParams();
+  const {id, category} = useParams();
   const handleLinkClick = (page) => {
     const pageIndex = pagesState.indexOf(page);
     setPagesState(pagesState.slice(0, pageIndex + 1));
@@ -56,17 +56,18 @@ const CustomBreadcrumbs = ({ isSearching }) => {
                       handleLinkClick(page);
                     }}
                     key={(page === "/" && "home") || page}
-                    to={page === 'product-details' ? `/product-details/${id}` : page }
-                    style={{
-                      textDecoration: "none",
-                      color: theme.palette.dark.main,
-                      "&:visited": {
-                        color: theme.palette.primary.main,
-                      },
-                      "&:hover": {
-                        textDecoration: "underline",
-                      },
-                    }}
+                    to={(page === 'product-details' && `/product-details/${id}`) || (page===`category` && `/category/${category}`) || (page) }
+                    className={styles.breadcrumbLink}
+                    // style={{
+                    //   textDecoration: "none",
+                    //   color: theme.palette.dark.main,
+                    //   "&:visited": {
+                    //     color: theme.palette.primary.main,
+                    //   },
+                    //   "&:hover": {
+                    //     textDecoration: "underline",
+                    //   },
+                    // }}
                   >
                     {(page === "/" && "Home") || page}
                   </Link>

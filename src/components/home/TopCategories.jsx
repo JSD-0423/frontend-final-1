@@ -45,7 +45,7 @@ const TopCategories = ({categories}) => {
             <ScrollToTopLink
               key={collection.collectionName}
               to="/category"
-              style={{
+              linkStyles={{
                 textDecoration: "none",
                 color: theme.palette.dark.main,
                 "&:visited": {
